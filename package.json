@@ -1,0 +1,20 @@
+{
+  "name": "bigiolo_lending",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "glob": "^13.0.0",
+    "vite": "^7.2.4",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-html-inject": "^1.1.2"
+  },
+  "dependencies": {
+    "postcss-sort-media-queries": "^5.2.0"
+  }
+}

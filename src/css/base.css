@@ -1,0 +1,7 @@
+body {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  color: black;
+  background-color: white;
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,13 @@
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./container.css');
+
+/* Sections style */
+@import url('./header.css');
+@import url('./mob-menu.css');
+@import url('./hero.css');
+@import url('./about.css');
+@import url('./la-casa.css');
+@import url('./contacts.css');
+@import url('./footer.css');

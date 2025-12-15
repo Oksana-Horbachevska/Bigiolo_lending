@@ -1,0 +1,146 @@
+.header {
+  background-color: green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.header-container {
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-header {
+  fill: #764191;
+  display: inline-flex;
+  align-items: center;
+}
+.logo-header:hover,
+.logo-header:focus {
+  fill: #ffffff;
+}
+
+.logo-header:active {
+  fill: #ffffff;
+}
+
+.icon-logo {
+  width: 119px;
+  height: 51px;
+}
+
+.nav-list {
+  display: none;
+}
+
+.nav-link {
+  white-space: nowrap;
+  color: #ffffff;
+  background: transparent;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #764191;
+}
+
+.nav-link:active {
+  color: #988aa0;
+}
+
+.burger-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  stroke: white;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background-color: inherit;
+}
+.burger-button:hover,
+.burger-button:focus {
+  stroke: #764191;
+}
+.burger-button:active {
+  stroke: #988aa0;
+}
+
+.burger-icon {
+  stroke: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 64px;
+}
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    max-width: 768px;
+    height: 72px;
+  }
+  .logo-header {
+    stroke: #ffffff;
+  }
+  .logo-header:hover,
+  .logo-header:focus {
+    stroke: #764191;
+  }
+
+  .logo-header:active {
+    stroke: #988aa0;
+  }
+  .nav {
+    margin: 0 auto;
+    max-width: 640px;
+    height: 51px;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-link {
+    padding: 12px 0;
+  }
+
+  .burger-button {
+    display: none;
+  }
+
+  section {
+    scroll-margin-top: 72px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header-container {
+    max-width: 1440px;
+  }
+  .nav {
+    max-width: 1440px;
+  }
+}
