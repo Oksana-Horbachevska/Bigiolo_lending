@@ -1,1 +1,46 @@
-/* styles will be added later */
+.hero {
+  width: 100%;
+  background-color: gray;
+  background-image: url(../img/IMG_0473-min.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto 0 auto;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+}
+
+.hero-title {
+  display: block;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: white;
+  font-family: 'Lora', serif;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 680px;
+  }
+
+  .hero-title {
+    max-width: 624px;
+    font-size: 44px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    height: 780px;
+  }
+
+  .hero-title {
+    font-size: 68px;
+    max-width: 640px;
+  }
+}

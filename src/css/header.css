@@ -1,5 +1,5 @@
 .header {
-  background-color: green;
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,24 +16,25 @@
 }
 
 .header-container {
-  height: 68px;
+  height: 82px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo-header {
-  fill: #764191;
+  fill: #ffffff;
   display: inline-flex;
   align-items: center;
 }
+
 .logo-header:hover,
 .logo-header:focus {
-  fill: #ffffff;
+  fill: #75da94;
 }
 
 .logo-header:active {
-  fill: #ffffff;
+  fill: #75da94;
 }
 
 .icon-logo {
@@ -46,12 +47,15 @@
 }
 
 .nav-link {
+  font-family: 'Josefin Sans', sans-serif;
   white-space: nowrap;
   color: #ffffff;
   background: transparent;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0;
   line-height: 150%;
+  text-transform: uppercase;
   text-decoration: none;
   text-align: center;
   transition: all 0.3s ease;
@@ -59,11 +63,11 @@
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #764191;
+  color: #75da94;
 }
 
 .nav-link:active {
-  color: #988aa0;
+  color: #75da94;
 }
 
 .burger-button {
@@ -79,10 +83,10 @@
 }
 .burger-button:hover,
 .burger-button:focus {
-  stroke: #764191;
+  stroke: #75da94;
 }
 .burger-button:active {
-  stroke: #988aa0;
+  stroke: #75da94;
 }
 
 .burger-icon {
@@ -99,19 +103,9 @@ section {
 @media screen and (min-width: 768px) {
   .header-container {
     max-width: 768px;
-    height: 72px;
-  }
-  .logo-header {
-    stroke: #ffffff;
-  }
-  .logo-header:hover,
-  .logo-header:focus {
-    stroke: #764191;
+    height: 88px;
   }
 
-  .logo-header:active {
-    stroke: #988aa0;
-  }
   .nav {
     margin: 0 auto;
     max-width: 640px;
