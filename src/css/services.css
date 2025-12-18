@@ -54,6 +54,3 @@
     width: calc((100% - 60px) / 3);
   }
 }
-
-@media screen and (min-width: 1440px) {
-}
