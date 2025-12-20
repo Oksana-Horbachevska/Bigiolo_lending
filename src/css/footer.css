@@ -22,6 +22,74 @@
   font-size: 15px;
   line-height: 1.75em;
   color: white;
+  display: block;
+}
+
+.info-phone {
+  position: relative;
+  padding-left: 26px;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.info-phone::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+
+  mask: url('../img/phone_in_talk.svg') no-repeat center;
+  mask-size: contain;
+
+  -webkit-mask: url('../img/phone_in_talk.svg') no-repeat center;
+  -webkit-mask-size: contain;
+}
+
+.info-mail {
+  position: relative;
+  padding-left: 26px;
+  color: white;
+}
+
+.info-mail::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+
+  mask: url('../img/mail\ \(1\).svg') no-repeat center;
+  mask-size: contain;
+
+  -webkit-mask: url('../img/mail\ \(1\).svg') no-repeat center;
+  -webkit-mask-size: contain;
+}
+
+.info-phone:hover,
+.info-phone:focus,
+.info-mail:hover,
+.info-mail:focus {
+  color: #75da94;
+}
+
+.social-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.social-link {
+}
+
+.social-svg {
+  fill: white;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,6 +99,16 @@
   }
 
   .info-wrapper {
-    width: calc((100% - 60px) / 3);
+    flex: 1;
+  }
+
+  .info-wrapper:first-child {
+    margin-right: 72px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .info-wrapper:first-child {
+    margin-right: 220px;
   }
 }
