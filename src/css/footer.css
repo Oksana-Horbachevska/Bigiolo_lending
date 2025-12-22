@@ -30,6 +30,7 @@
   padding-left: 26px;
   color: white;
   margin-bottom: 6px;
+  transition: all 0.3s ease;
 }
 
 .info-phone::before {
@@ -53,6 +54,7 @@
   position: relative;
   padding-left: 26px;
   color: white;
+  transition: all 0.3s ease;
 }
 
 .info-mail::before {
@@ -64,10 +66,8 @@
   width: 18px;
   height: 18px;
   background-color: currentColor;
-
   mask: url('../img/mail\ \(1\).svg') no-repeat center;
   mask-size: contain;
-
   -webkit-mask: url('../img/mail\ \(1\).svg') no-repeat center;
   -webkit-mask-size: contain;
 }
@@ -86,10 +86,20 @@
 }
 
 .social-link {
+  margin: 0;
+  padding: 0;
+  width: 15px;
+  height: 15px;
 }
 
 .social-svg {
   fill: white;
+  transition: all 0.3s ease;
+}
+
+.social-svg:hover,
+.social-svg:hover {
+  fill: #75da94;
 }
 
 @media screen and (min-width: 768px) {
@@ -103,7 +113,7 @@
   }
 
   .info-wrapper:first-child {
-    margin-right: 72px;
+    margin-right: 56px;
   }
 }
 
