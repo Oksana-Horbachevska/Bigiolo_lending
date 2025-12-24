@@ -9,9 +9,9 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  /* opacity: 0;
+  opacity: 0;
   visibility: hidden;
-  pointer-events: none; */
+  pointer-events: none;
   transition: opacity 250ms ease-in-out;
 }
 

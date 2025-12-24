@@ -81,16 +81,14 @@
   border: none;
   background-color: inherit;
 }
-.burger-button:hover,
-.burger-button:focus {
-  stroke: #75da94;
-}
-.burger-button:active {
-  stroke: #75da94;
-}
 
 .burger-icon {
   stroke: white;
+}
+
+.burger-icon:hover,
+.burger-icon:focus {
+  stroke: #75da94;
 }
 
 html {
