@@ -1,5 +1,7 @@
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
+const header = document.querySelector('.header');
+// -------------------current navLink--------------------------
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -29,3 +31,15 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach(section => observer.observe(section));
+
+// -------------------appeared with scroll --------------------------
+
+const SCROLL_OFFSET = 80;
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > SCROLL_OFFSET) {
+    header.classList.add('header--scrolled');
+  } else {
+    header.classList.remove('header--scrolled');
+  }
+});

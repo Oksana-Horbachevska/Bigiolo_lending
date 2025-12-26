@@ -1,11 +1,15 @@
 .header {
-  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
+  transform: translateY(0);
 }
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -119,6 +123,33 @@ html {
 }
 section {
   scroll-margin-top: 64px;
+}
+/* ----------- header's styles on scroll ------------- */
+.header--scrolled {
+  background-color: #ffffff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+}
+
+.header--scrolled .nav-link {
+  color: #222;
+}
+
+.header--scrolled .logo-header {
+  fill: #222;
+}
+
+.header--scrolled .burger-icon {
+  stroke: #222;
+}
+
+.header--scrolled .nav-link:hover,
+.header--scrolled .nav-link.current {
+  color: #75da94;
+}
+
+.header--scrolled .burger-icon {
+  stroke: #75da94;
 }
 
 @media screen and (min-width: 768px) {
