@@ -24,7 +24,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.6, // 60% секції в полі зору
+    threshold: 0.6,
   }
 );
 
