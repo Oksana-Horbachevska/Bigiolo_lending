@@ -16,6 +16,7 @@
     "vite-plugin-html-inject": "^1.1.2"
   },
   "dependencies": {
+    "lightgallery": "^2.9.0",
     "postcss-sort-media-queries": "^5.2.0"
   }
 }
