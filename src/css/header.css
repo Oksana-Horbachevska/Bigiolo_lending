@@ -5,8 +5,8 @@
   right: 0;
   z-index: 1000;
   background-color: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease,
-    transform 0.3s ease;
+  transition: background-color 0.6s ease, box-shadow 0.6s ease,
+    transform 0.6s ease;
   transform: translateY(0);
 }
 
@@ -27,23 +27,19 @@
 }
 
 .logo-header {
-  fill: #ffffff;
   display: inline-flex;
   align-items: center;
-}
-
-.logo-header:hover,
-.logo-header:focus {
-  fill: #75da94;
-}
-
-.logo-header:active {
-  fill: #75da94;
 }
 
 .icon-logo {
   width: 119px;
   height: 51px;
+  fill: white;
+}
+
+.icon-logo:hover,
+.icon-logo:focus {
+  fill: #75da94;
 }
 
 .nav-list {
@@ -143,12 +139,23 @@ section {
   stroke: #222;
 }
 
+.header--scrolled .icon-logo {
+  fill: #222;
+}
+
+.header--scrolled .icon-logo:hover,
+.header--scrolled .icon-logo:focus {
+  fill: #75da94;
+}
+
 .header--scrolled .nav-link:hover,
+.header--scrolled .nav-link:focus,
 .header--scrolled .nav-link.current {
   color: #75da94;
 }
 
-.header--scrolled .burger-icon {
+.header--scrolled .burger-icon:hover,
+.header--scrolled .burger-icon:focus {
   stroke: #75da94;
 }
 
