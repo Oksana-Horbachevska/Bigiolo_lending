@@ -1,0 +1,79 @@
+.il-vino {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+  background-color: #4a7b63;
+  background-image: url('/img/il-vino/bigiolovigna.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto 0 auto;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vino-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-subtitle {
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: white;
+}
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 1.25em;
+  color: white;
+}
+
+.vino-text {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75em;
+  color: white;
+}
+
+.vino-bold-words {
+  font-weight: 800;
+}
+
+.vino-img {
+  display: block;
+  transition: all 0.5s;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .vino-container {
+    flex-direction: row;
+  }
+
+  .vino-content-wrapper,
+  .vino-image-wrapper {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .vino-image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .vino-img {
+    max-width: 65%;
+    height: auto;
+  }
+}

@@ -8,8 +8,7 @@
   flex-direction: column;
   gap: 30px;
 }
-.about-content-wrapper {
-}
+
 .section-subtitle-green {
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 1px;
@@ -39,8 +38,6 @@
   font-weight: 800;
 }
 
-.about-image-wrapper {
-}
 .about-img {
   display: block;
   transition: all 0.5s;

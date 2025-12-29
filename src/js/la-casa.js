@@ -1,10 +1,10 @@
-import lightGallery from 'lightgallery';
-import 'lightgallery/css/lightgallery.css';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import lgZoom from 'lightgallery/plugins/zoom';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-
-lightGallery(document.getElementById('laCasaGallery'), {
-  plugins: [lgZoom, lgThumbnail],
-  speed: 400,
+new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+  animationSpeed: 300,
+  fadeSpeed: 300,
 });

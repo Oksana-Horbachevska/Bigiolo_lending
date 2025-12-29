@@ -173,11 +173,12 @@ section {
 
   .nav-list {
     display: flex;
-    gap: 32px;
+    gap: 20px;
   }
 
   .nav-link {
     padding: 12px 0;
+    font-size: 13px;
   }
 
   .burger-button {
@@ -193,7 +194,16 @@ section {
   .header-container {
     max-width: 1440px;
   }
+
   .nav {
     max-width: 1440px;
+  }
+
+  .nav-list {
+    gap: 32px;
+  }
+
+  .nav-link {
+    font-size: 15px;
   }
 }

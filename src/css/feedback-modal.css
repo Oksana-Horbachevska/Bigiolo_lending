@@ -1,0 +1,214 @@
+.body-lock {
+  overflow: hidden;
+  height: 100vh;
+}
+.feedback-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.feedback-modal-window {
+  padding: 61.17px 16px;
+  position: relative;
+  width: 320px;
+  min-height: 568px;
+  background: #060307;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .feedback-modal-window {
+    padding: 64px 32px 82.33px;
+    width: 704px;
+    min-height: 688px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .feedback-modal-window {
+    padding: 64px;
+    width: 864px;
+  }
+}
+.feedback-modal-title {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .feedback-modal-title {
+    font-size: 44px;
+    line-height: 120%;
+    margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .feedback-modal-title {
+    font-size: 60px;
+  }
+}
+
+.feedback-modal-list {
+  margin-bottom: 32px;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .feedback-modal-list {
+    margin-bottom: 24px;
+    gap: 24px;
+  }
+}
+
+.feedback-modal-item {
+  width: 100%;
+  min-height: 78px;
+}
+
+.feedback-modal-label {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.feedback-modal-input {
+  color: #ffffff;
+  background: #060307;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 8px 12px;
+  width: 100%;
+  height: 43px;
+}
+
+.feedback-modal-input-tex {
+  height: 130px;
+  padding: 12px;
+}
+@media screen and (min-width: 768px) {
+  .feedback-modal-input-tex {
+    height: 180px;
+  }
+}
+.feedback-modal-stars {
+  display: flex;
+  gap: 6.07px;
+  margin-bottom: 32px;
+}
+@media screen and (min-width: 768px) {
+  .feedback-modal-stars {
+    margin-bottom: 24px;
+  }
+}
+
+.feedback-modal-stars img {
+  width: 31px;
+  height: 29px;
+  cursor: pointer;
+}
+
+.feedback-modal-submit {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 288px;
+  height: 47px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px 0px rgba(6, 3, 7, 0.05),
+    inset 0px -2px 1px 0px rgba(0, 0, 0, 0.2),
+    inset 0px 0px 0px 1px rgba(6, 3, 7, 0.15),
+    inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
+    inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05);
+  background: rgb(118, 65, 145);
+}
+
+@media screen and (min-width: 768px) {
+  .feedback-modal-submit {
+    width: 340px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .feedback-modal-submit {
+    width: 108px;
+  }
+}
+.feedback-modal-submit:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+  transition: filter 0.3s, transform 0.2s;
+}
+
+.feedback-modal-submit:focus {
+  background: linear-gradient(135deg, #9e58c4, #763b96);
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.15),
+    0 0 4px rgba(255, 255, 255, 0.05);
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s;
+}
+
+.feedback-modal-close {
+  position: absolute;
+  top: 13.17px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+  z-index: 10;
+}
+
+.feedback-modal-close-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+}
+.feedback-modal-close-icon:hover,
+.feedback-modal-close-icon:focus {
+  fill: #764191;
+}
+
+.feedback-modal-close-icon:active {
+  fill: #988aa0;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* error */
+.input-error {
+  border: 1px solid #af0404 !important;
+  color: #af0404 !important;
+}
+
+.input-error::placeholder {
+  color: #af0404;
+}
+
+.error-text {
+  font-weight: 400;
+  font-size: 12px;
+  color: #af0404;
+  line-height: 150%;
+  margin-top: 4px;
+}

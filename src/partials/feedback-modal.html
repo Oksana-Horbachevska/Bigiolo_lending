@@ -1,0 +1,51 @@
+<div class="feedback-modal-overlay is-hidden" data-feedback-modal>
+  <div class="feedback-modal-window">
+    <button
+      type="button"
+      class="feedback-modal-close"
+      data-feedback-modal-close
+      aria-label="Close modal"
+    >
+      <svg
+        class="feedback-modal-close-icon"
+        width="16"
+        height="15"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <use href="/img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="feedback-modal-title">Submit feedback</h2>
+    <form class="feedback-modal-form" novalidate>
+      <ul class="feedback-modal-list">
+        <li class="feedback-modal-item">
+          <label for="user-name" class="feedback-modal-label">Name</label>
+          <input
+            id="user-name"
+            type="text"
+            class="feedback-modal-input"
+            name="user-name"
+            placeholder="Emily"
+            minlength="2"
+            pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+            required
+          />
+        </li>
+        <li class="feedback-modal-item">
+          <label for="user-message" class="feedback-modal-label">Message</label>
+          <textarea
+            id="user-message"
+            class="feedback-modal-input feedback-modal-input-tex"
+            name="user-message"
+            placeholder="Type your message..."
+            rows="3"
+            required
+          ></textarea>
+        </li>
+      </ul>
+      <div class="feedback-modal-stars" id="feedback-star-rating"></div>
+      <button type="submit" class="feedback-modal-submit">Submit</button>
+    </form>
+  </div>
+</div>
