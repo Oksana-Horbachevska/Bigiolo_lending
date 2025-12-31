@@ -1,0 +1,77 @@
+const feedbackOpenBtn = document.querySelector('[data-feedback-modal-open]');
+const feedbackCloseBtn = document.querySelector('[data-feedback-modal-close]');
+const feedbackModal = document.querySelector('[data-feedback-modal]');
+const ratingEl = document.getElementById('feedback-star-rating');
+const ratingInput = document.getElementById('rating-value');
+const stars = ratingEl.querySelectorAll('button');
+const feedbackForm = document.getElementById('feedback-form');
+const feedbackSuccessMsg = document.getElementById('feedback-success');
+const feedbackList = document.querySelector('.feedback-modal-list'); // щоб приховати поля після успіху
+const iframe = document.getElementById('hidden_iframe');
+
+let isSubmitted = false;
+let currentRating = 0;
+
+function openFeedbackModal() {
+  feedbackModal.classList.remove('is-hidden');
+  document.body.classList.add('no-scroll');
+  document.addEventListener('keydown', closeFeedbackModal);
+}
+
+function closeFeedbackModal(e) {
+  if (e.type === 'keydown' && e.key !== 'Escape') return;
+  feedbackModal.classList.add('is-hidden');
+  document.body.classList.remove('no-scroll');
+  document.removeEventListener('keydown', closeFeedbackModal);
+}
+
+feedbackOpenBtn.addEventListener('click', openFeedbackModal);
+feedbackCloseBtn.addEventListener('click', closeFeedbackModal);
+
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    currentRating = Number(star.dataset.value);
+    ratingInput.value = currentRating;
+
+    stars.forEach(s =>
+      s.classList.toggle('active', Number(s.dataset.value) <= currentRating)
+    );
+  });
+});
+
+iframe.addEventListener('load', () => {
+  if (isSubmitted) {
+    // Ховаємо форму та заголовок
+    feedbackForm.style.display = 'none';
+    const title = document.querySelector('.feedback-modal-title');
+    if (title) title.style.display = 'none';
+
+    // Показуємо успіх
+    feedbackSuccessMsg.classList.remove('is-hidden');
+
+    // Очищуємо форму
+    feedbackForm.reset();
+
+    // Скидаємо зірочки візуально
+    stars.forEach(s => s.classList.remove('active'));
+    currentRating = 0;
+    ratingInput.value = '';
+
+    // Таймер на закриття модалки
+    setTimeout(() => {
+      closeFeedbackModal({ type: 'keydown', key: 'Escape' });
+
+      // Повертаємо все в початковий стан для наступного відкриття
+      setTimeout(() => {
+        feedbackForm.style.display = 'block';
+        if (title) title.style.display = 'block';
+        feedbackSuccessMsg.classList.add('is-hidden');
+        isSubmitted = false;
+      }, 500);
+    }, 3000);
+  }
+});
+
+feedbackForm.addEventListener('submit', () => {
+  isSubmitted = true;
+});

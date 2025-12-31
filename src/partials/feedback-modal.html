@@ -8,44 +8,58 @@
     >
       <svg
         class="feedback-modal-close-icon"
-        width="16"
+        width="15"
         height="15"
         aria-hidden="true"
         focusable="false"
       >
-        <use href="/img/sprite.svg#icon-close"></use>
+        <use href="../public/icons.svg#icon-close"></use>
       </svg>
     </button>
     <h2 class="feedback-modal-title">Submit feedback</h2>
-    <form class="feedback-modal-form" novalidate>
+    <form
+      id="feedback-form"
+      class="feedback-modal-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSflntMv2qac48f8k4ADYZS8z0eyvngR8slREOns0hMUm943mA/formResponse"
+      method="POST"
+      target="hidden_iframe"
+    >
       <ul class="feedback-modal-list">
         <li class="feedback-modal-item">
           <label for="user-name" class="feedback-modal-label">Name</label>
           <input
-            id="user-name"
-            type="text"
             class="feedback-modal-input"
-            name="user-name"
-            placeholder="Emily"
-            minlength="2"
-            pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+            name="entry.1929837925"
+            id="user-name"
             required
           />
         </li>
         <li class="feedback-modal-item">
           <label for="user-message" class="feedback-modal-label">Message</label>
           <textarea
+            class="feedback-modal-input-tex"
+            name="entry.1811696288"
             id="user-message"
-            class="feedback-modal-input feedback-modal-input-tex"
-            name="user-message"
-            placeholder="Type your message..."
-            rows="3"
             required
           ></textarea>
         </li>
       </ul>
-      <div class="feedback-modal-stars" id="feedback-star-rating"></div>
+      <div class="rating" id="feedback-star-rating" data-rating="0">
+        <button type="button" data-value="1" aria-label="1 star">★</button>
+        <button type="button" data-value="2" aria-label="2 stars">★</button>
+        <button type="button" data-value="3" aria-label="3 stars">★</button>
+        <button type="button" data-value="4" aria-label="4 stars">★</button>
+        <button type="button" data-value="5" aria-label="5 stars">★</button>
+      </div>
+
+      <input type="hidden" name="entry.224322205" id="rating-value" />
       <button type="submit" class="feedback-modal-submit">Submit</button>
     </form>
+    <p class="feedback-success is-hidden" id="feedback-success">
+      Grazie! La tua recensione sarà pubblicata dopo la moderazione ❤️
+    </p>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"></iframe>
+    </iframe>
   </div>
 </div>

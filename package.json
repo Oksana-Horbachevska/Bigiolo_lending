@@ -16,8 +16,9 @@
     "vite-plugin-html-inject": "^1.1.2"
   },
   "dependencies": {
-    "lightgallery": "^2.9.0",
+    "papaparse": "^5.5.3",
     "postcss-sort-media-queries": "^5.2.0",
-    "simplelightbox": "^2.14.3"
+    "simplelightbox": "^2.14.3",
+    "swiper": "^12.0.3"
   }
 }
