@@ -27,6 +27,20 @@
   line-height: 1.25em;
   color: white;
 }
+
+.casa-description {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75em;
+  color: white;
+}
+
+.bold-words-black {
+  color: #294537;
+  font-weight: 800;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -49,4 +63,25 @@
 
 .gallery-hidden {
   display: none;
+}
+
+.casa-send-Btn {
+  line-height: 150%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 288px;
+  height: 47px;
+  color: #4c9772ff;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px 0px rgba(6, 3, 7, 0.05),
+    inset 0px -2px 1px 0px rgba(0, 0, 0, 0.2),
+    inset 0px 0px 0px 1px rgba(6, 3, 7, 0.15),
+    inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
+    inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05);
+  background: white;
 }

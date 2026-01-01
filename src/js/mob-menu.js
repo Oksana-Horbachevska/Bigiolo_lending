@@ -29,7 +29,7 @@ menuLinks.forEach(link => {
 
     if (targetSection) {
       mobileMenu.classList.remove('is-open');
-      document.body.style.overflow = '';
+      document.body.classList.remove('no-scroll');
       targetSection.scrollIntoView({ behavior: 'smooth' });
     }
   });
