@@ -55,7 +55,24 @@ async function loadReviews() {
 
     initSwiper();
   } catch (error) {
-    console.error('Помилка завантаження:', error);
+    console.error('loading error:', error);
+  }
+}
+
+function updateCustomPagination(swiper) {
+  const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+  if (!bullets.length) return;
+
+  bullets.forEach(b => b.classList.remove('swiper-pagination-bullet-active'));
+
+  const lastIndex = swiper.slides.length - 1;
+
+  if (swiper.activeIndex === 0) {
+    bullets[0].classList.add('swiper-pagination-bullet-active');
+  } else if (swiper.activeIndex === lastIndex) {
+    bullets[2].classList.add('swiper-pagination-bullet-active');
+  } else {
+    bullets[1].classList.add('swiper-pagination-bullet-active');
   }
 }
 
@@ -65,9 +82,7 @@ function initSwiper() {
   }
 
   swiper = new Swiper('.swiper', {
-    // Реєструємо модулі
     modules: [Navigation, Pagination],
-
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
@@ -78,12 +93,51 @@ function initSwiper() {
 
     pagination: {
       el: '.swiper-pagination',
-      clickable: true,
+      type: 'custom',
+      renderCustom() {
+        return `
+        <span class="swiper-pagination-bullet" data-index="first"></span>
+        <span class="swiper-pagination-bullet" data-index="middle"></span>
+        <span class="swiper-pagination-bullet" data-index="last"></span>
+      `;
+      },
     },
+
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+  });
+
+  swiper.on('slideChange', () => {
+    updateCustomPagination(swiper);
+  });
+
+  setTimeout(() => {
+    updateCustomPagination(swiper);
+  }, 0);
+
+  const paginationEl = document.querySelector('.swiper-pagination');
+
+  paginationEl.addEventListener('click', e => {
+    const bullet = e.target.closest('.swiper-pagination-bullet');
+    if (!bullet || !swiper) return;
+
+    const slidesCount = swiper.slides.length;
+
+    switch (bullet.dataset.index) {
+      case 'first':
+        swiper.slideTo(0);
+        break;
+
+      case 'middle':
+        swiper.slideTo(Math.floor(slidesCount / 2));
+        break;
+
+      case 'last':
+        swiper.slideTo(slidesCount - 1);
+        break;
+    }
   });
 
   setTimeout(() => {
