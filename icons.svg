@@ -78,6 +78,16 @@
     <symbol xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" id="star-full">
       <path fill="#764191" d="M9.071 1.318c.344-.817 1.514-.817 1.858 0l2.029 4.819c.145.344.473.58.849.609l5.266.417c.892.07 1.254 1.17.574 1.746l-4.012 3.395a.987.987 0 0 0-.324.986l1.226 5.077c.207.86-.74 1.54-1.504 1.079l-4.508-2.72a1.017 1.017 0 0 0-1.05 0l-4.508 2.72c-.764.46-1.71-.22-1.503-1.08L4.69 13.29a.987.987 0 0 0-.325-.986L.353 8.91c-.68-.575-.318-1.675.574-1.746l5.266-.417c.377-.03.704-.265.85-.61L9.07 1.319Z"></path>
     </symbol>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-arrow-thick-left" viewBox="0 0 20 20">
+<path d="M10 13h8v-6h-8v-5l-8 8 8 8v-5z"></path>
+</symbol>
+<symbol id="icon-arrow-thick-right" viewBox="0 0 20 20">
+<path d="M10 7h-8v6h8v5l8-8-8-8v5z"></path>
+</symbol>
+</defs>
+</svg>
   </defs>
 </svg>
 
