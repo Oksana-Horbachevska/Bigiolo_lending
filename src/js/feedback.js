@@ -5,32 +5,26 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const wrapper = document.querySelector('.swiper-wrapper');
-const feedbackForm = document.getElementById('feedback-form');
-
+// Селектори
+const wrapper = document.querySelector('.feedback-container .swiper-wrapper');
 const SHEET_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vSmwbeh0wcfzPaoNP18jTO7b5qbPxUKGZW55oibzdkk_qyXE0K8X85JqPh_fBGQG45bY6sRlRhAT9Hc/pub?output=csv';
-let swiper;
+
+let feedbackSwiper; // Перейменував для чіткості
 
 async function loadReviews() {
   try {
     const res = await fetch(SHEET_URL);
     const csv = await res.text();
+    const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
 
-    const parsed = Papa.parse(csv, {
-      header: true,
-      skipEmptyLines: true,
-    });
-
+    if (!wrapper) return;
     wrapper.innerHTML = '';
 
-    parsed.data.forEach((row, index) => {
+    parsed.data.forEach(row => {
       const name = row['Name']?.trim();
       const message = row['Message']?.trim();
       const rating = parseInt(row['Rating']);
-
-      // Лог тепер не буде видавати помилку
-      console.log(`Обробка відгуку №${index + 1}:`, name);
 
       if (!name || !message) return;
 
@@ -41,108 +35,113 @@ async function loadReviews() {
         <p class="feedback_description" title="Click to read more">${message}</p>
         <span class="feedback_name">${name}</span>
       `;
+
       const desc = slide.querySelector('.feedback_description');
       desc.addEventListener('click', () => {
-        desc.classList.toggle('is-open'); // Перемикаємо клас
-
-        // Оновлюємо висоту слайдера, щоб він не обрізав розгорнутий текст
-        if (swiper) {
-          setTimeout(() => swiper.updateAutoHeight(300), 10);
+        desc.classList.toggle('is-open');
+        if (feedbackSwiper) {
+          setTimeout(() => feedbackSwiper.updateAutoHeight(300), 10);
         }
       });
       wrapper.appendChild(slide);
     });
 
-    initSwiper();
+    initFeedbackSwiper();
   } catch (error) {
     console.error('loading error:', error);
   }
 }
 
-function updateCustomPagination(swiper) {
-  const bullets = document.querySelectorAll('.swiper-pagination-bullet');
-  if (!bullets.length) return;
+function updateCustomPagination(s) {
+  const bullets = document.querySelectorAll(
+    '.feedback-container .swiper-pagination-bullet'
+  );
+  if (!bullets.length || !s.slides) return;
 
   bullets.forEach(b => b.classList.remove('swiper-pagination-bullet-active'));
+  const lastIndex = s.slides.length - 1;
 
-  const lastIndex = swiper.slides.length - 1;
-
-  if (swiper.activeIndex === 0) {
-    bullets[0].classList.add('swiper-pagination-bullet-active');
-  } else if (swiper.activeIndex === lastIndex) {
-    bullets[2].classList.add('swiper-pagination-bullet-active');
+  if (s.activeIndex === 0) {
+    bullets[0]?.classList.add('swiper-pagination-bullet-active');
+  } else if (s.activeIndex === lastIndex) {
+    bullets[2]?.classList.add('swiper-pagination-bullet-active');
   } else {
-    bullets[1].classList.add('swiper-pagination-bullet-active');
+    bullets[1]?.classList.add('swiper-pagination-bullet-active');
   }
 }
 
-function initSwiper() {
-  if (swiper) {
-    swiper.destroy(true, true);
-  }
+function initFeedbackSwiper() {
+  if (feedbackSwiper) feedbackSwiper.destroy(true, true);
 
-  swiper = new Swiper('.swiper', {
+  // Використовуємо специфічний клас .feedback-swiper
+  feedbackSwiper = new Swiper('.feedback-swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 20,
-    loop: false,
     autoHeight: true,
     observer: true,
     observeParents: true,
-    watchOverflow: true,
-
     pagination: {
-      el: '.swiper-pagination',
+      el: '.feedback-container .swiper-pagination',
       type: 'custom',
       renderCustom() {
         return `
-        <span class="swiper-pagination-bullet" data-index="first"></span>
-        <span class="swiper-pagination-bullet" data-index="middle"></span>
-        <span class="swiper-pagination-bullet" data-index="last"></span>
-      `;
+          <span class="swiper-pagination-bullet" data-index="first"></span>
+          <span class="swiper-pagination-bullet" data-index="middle"></span>
+          <span class="swiper-pagination-bullet" data-index="last"></span>
+        `;
       },
     },
-
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.feedback-container .swiper-button-next',
+      prevEl: '.feedback-container .swiper-button-prev',
     },
   });
 
-  swiper.on('slideChange', () => {
-    updateCustomPagination(swiper);
-  });
+  if (feedbackSwiper && feedbackSwiper.on) {
+    feedbackSwiper.on('slideChange', () =>
+      updateCustomPagination(feedbackSwiper)
+    );
+    updateCustomPagination(feedbackSwiper);
+  }
 
-  setTimeout(() => {
-    updateCustomPagination(swiper);
-  }, 0);
-
-  const paginationEl = document.querySelector('.swiper-pagination');
-
-  paginationEl.addEventListener('click', e => {
-    const bullet = e.target.closest('.swiper-pagination-bullet');
-    if (!bullet || !swiper) return;
-
-    const slidesCount = swiper.slides.length;
-
-    switch (bullet.dataset.index) {
-      case 'first':
-        swiper.slideTo(0);
-        break;
-
-      case 'middle':
-        swiper.slideTo(Math.floor(slidesCount / 2));
-        break;
-
-      case 'last':
-        swiper.slideTo(slidesCount - 1);
-        break;
-    }
-  });
-
-  setTimeout(() => {
-    swiper.update();
-  }, 100);
+  // Обробка кліків по кастомним булетам
+  const paginationEl = document.querySelector(
+    '.feedback-container .swiper-pagination'
+  );
+  if (paginationEl) {
+    paginationEl.addEventListener('click', e => {
+      const bullet = e.target.closest('.swiper-pagination-bullet');
+      if (!bullet || !feedbackSwiper) return;
+      const count = feedbackSwiper.slides.length;
+      if (bullet.dataset.index === 'first') feedbackSwiper.slideTo(0);
+      if (bullet.dataset.index === 'middle')
+        feedbackSwiper.slideTo(Math.floor(count / 2));
+      if (bullet.dataset.index === 'last') feedbackSwiper.slideTo(count - 1);
+    });
+  }
 }
 
+// Ініціалізація галереї La Casa
+function initCasaSwiper() {
+  new Swiper('.la-casa-swiper', {
+    modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: '.la-casa-next',
+      prevEl: '.la-casa-prev',
+    },
+    pagination: {
+      el: '.la-casa-pagination',
+      clickable: true,
+      bulletClass: 'la-casa-pagination-bullet',
+      bulletActiveClass: 'la-casa-pagination-bullet-active',
+    },
+  });
+}
+
+// Запуск усього
 loadReviews();
+initCasaSwiper();

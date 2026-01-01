@@ -10,8 +10,7 @@
   flex-direction: column;
   gap: 20px;
 }
-.title-wrapper {
-}
+
 .section-subtitle {
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 1px;
@@ -41,28 +40,42 @@
   font-weight: 800;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+.la-casa-swiper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.gallery img {
+.casa-gallery-img {
   width: 100%;
   height: auto;
-  cursor: zoom-in;
+  max-height: 700px; /* щоб фото не були занадто величезними */
+  object-fit: cover;
+  display: block;
 }
 
-.gallery-item {
-  border: 1px solid #808080;
+.la-casa-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px !important;
 }
 
-.gallery-link {
-  text-decoration: none;
+.la-casa-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background-color: white !important;
+  opacity: 0.9 !important;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.gallery-hidden {
-  display: none;
+.la-casa-pagination-bullet-active {
+  background-color: #75da94 !important;
+  opacity: 1 !important;
+  transform: scale(1.1);
 }
 
 .casa-send-Btn {
@@ -104,13 +117,88 @@
   transition: background-color 0.3s ease, box-shadow 0.3s;
 }
 
+/*================ Styles for Tablet devices ======================*/
+
 @media screen and (min-width: 768px) {
+  .la-casa-prev,
+  .la-casa-next {
+    background-color: transparent !important;
+    border: 1px solid white !important;
+  }
+
+  .la-casa-prev .icon,
+  .la-casa-next .icon {
+    fill: white !important;
+  }
+
+  .la-casa-prev:hover,
+  .la-casa-prev:focus,
+  .la-casa-next:hover,
+  .la-casa-next:focus {
+    border-color: #294537 !important;
+    transition: all 0.3s ease;
+  }
+
+  .la-casa-prev:hover svg,
+  .la-casa-next:hover svg,
+  .la-casa-prev:focus svg,
+  .la-casa-next:focus svg {
+    fill: #4a7b63 !important;
+    transition: all 0.3s ease;
+  }
+
+  .la-casa-prev:active svg,
+  .la-casa-next:active svg {
+    fill: #294537 !important;
+    transition: all 0.3s ease;
+  }
+
+  .la-casa-pagination {
+    margin-top: 15px;
+  }
+
+  .la-casa-pagination-bullet {
+    background-color: white !important;
+    opacity: 0.9 !important;
+  }
+
+  .la-casa-pagination-bullet-active {
+    background-color: #75da94 !important;
+    opacity: 1 !important;
+  }
+
   .casa-send-Btn {
     width: 186px;
     padding: 0;
   }
 }
+
+/*=========== Styles for Desktop devices ===========*/
+
 @media screen and (min-width: 1440px) {
+  .la-casa-swiper {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #4a7b63; /* Світлий фон для пустих місць з боків */
+    overflow: hidden;
+    padding-inline: 60px;
+  }
+
+  .casa-gallery-img {
+    width: 100%;
+    height: 800px; /* Задаємо фіксовану висоту для десктопа */
+    object-fit: contain; /* Картинка не обрізається, а вписується */
+    display: block;
+  }
+
+  .la-casa-prev {
+    left: 0 !important;
+  }
+
+  .la-casa-next {
+    right: 0 !important;
+  }
+
   .casa-send-Btn {
     width: 220px;
   }
