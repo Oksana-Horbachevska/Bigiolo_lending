@@ -6,10 +6,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const wrapper = document.querySelector('.swiper-wrapper');
+const feedbackForm = document.getElementById('feedback-form');
 
 const SHEET_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vSmwbeh0wcfzPaoNP18jTO7b5qbPxUKGZW55oibzdkk_qyXE0K8X85JqPh_fBGQG45bY6sRlRhAT9Hc/pub?output=csv';
-
 let swiper;
 
 async function loadReviews() {

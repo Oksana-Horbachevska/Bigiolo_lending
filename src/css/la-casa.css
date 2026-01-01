@@ -78,10 +78,40 @@
   font-weight: 500;
   border: none;
   cursor: pointer;
+
+  background: white;
   box-shadow: 0px 1px 2px 0px rgba(6, 3, 7, 0.05),
     inset 0px -2px 1px 0px rgba(0, 0, 0, 0.2),
     inset 0px 0px 0px 1px rgba(6, 3, 7, 0.15),
     inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
     inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05);
-  background: white;
+}
+
+.casa-send-Btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+  transition: filter 0.3s, transform 0.2s;
+  color: #294537;
+  font-weight: 600;
+}
+
+.casa-send-Btn:focus {
+  background-color: #4a7b63;
+  outline: auto;
+  border-color: white;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+  .casa-send-Btn {
+    width: 186px;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .casa-send-Btn {
+    width: 220px;
+  }
 }

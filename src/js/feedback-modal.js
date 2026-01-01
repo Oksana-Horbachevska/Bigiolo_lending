@@ -41,23 +41,16 @@ stars.forEach(star => {
 
 iframe.addEventListener('load', () => {
   if (isSubmitted) {
-    // Ховаємо форму та заголовок
     feedbackForm.style.display = 'none';
     const title = document.querySelector('.feedback-modal-title');
     if (title) title.style.display = 'none';
-
-    // Показуємо успіх
     feedbackSuccessMsg.classList.remove('is-hidden');
-
-    // Очищуємо форму
     feedbackForm.reset();
 
-    // Скидаємо зірочки візуально
     stars.forEach(s => s.classList.remove('active'));
     currentRating = 0;
     ratingInput.value = '';
 
-    // Таймер на закриття модалки
     setTimeout(() => {
       closeFeedbackModal({ type: 'keydown', key: 'Escape' });
 

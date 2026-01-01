@@ -1,7 +1,3 @@
-.body-lock {
-  overflow: hidden;
-  height: 100vh;
-}
 .feedback-modal-overlay {
   position: fixed;
   inset: 0;
@@ -13,7 +9,7 @@
 }
 
 .feedback-modal-window {
-  padding: 61.17px 16px;
+  padding: 62px 16px;
   position: relative;
   width: 320px;
   min-height: 568px;
@@ -22,19 +18,6 @@
   box-sizing: border-box;
 }
 
-@media screen and (min-width: 768px) {
-  .feedback-modal-window {
-    padding: 64px 32px 82.33px;
-    width: 704px;
-    min-height: 688px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .feedback-modal-window {
-    padding: 64px;
-    width: 864px;
-  }
-}
 .feedback-modal-title {
   color: #4a7b63;
   font-weight: 700;
@@ -44,30 +27,12 @@
   text-align: center;
   margin-bottom: 38px;
 }
-@media screen and (min-width: 768px) {
-  .feedback-modal-title {
-    font-size: 44px;
-    line-height: 120%;
-    margin-bottom: 48px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .feedback-modal-title {
-    font-size: 60px;
-  }
-}
 
 .feedback-modal-list {
   margin-bottom: 32px;
   gap: 32px;
   display: flex;
   flex-direction: column;
-}
-@media screen and (min-width: 768px) {
-  .feedback-modal-list {
-    margin-bottom: 24px;
-    gap: 24px;
-  }
 }
 
 .feedback-modal-item {
@@ -104,6 +69,7 @@
   width: 100%;
   padding: 12px;
   outline: none;
+  resize: none;
 }
 
 .feedback-modal-input:hover,
@@ -118,11 +84,6 @@
     inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05);
 }
 
-@media screen and (min-width: 768px) {
-  .feedback-modal-input-tex {
-    height: 180px;
-  }
-}
 .rating {
   display: flex;
   justify-content: center;
@@ -168,12 +129,6 @@
   background: #4a7b63;
 }
 
-@media screen and (min-width: 768px) {
-  .feedback-modal-submit {
-    width: 340px;
-  }
-}
-
 .feedback-modal-submit:hover {
   filter: brightness(1.2);
   transform: translateY(-1px);
@@ -181,11 +136,12 @@
 }
 
 .feedback-modal-submit:focus {
-  background-color: #294537;
-  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.15),
-    0 0 4px rgba(255, 255, 255, 0.05);
-  outline: none;
-  transition: background 0.3s ease, box-shadow 0.3s;
+  background-color: white;
+  outline: auto;
+  border-color: #4c9772;
+  font-weight: 600;
+  color: #4c9772;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
 }
 
 .feedback-modal-close {
@@ -215,25 +171,11 @@
   stroke: #4a7b63;
 }
 
-@media screen and (min-width: 768px) {
-  .feedback-modal-close-icon {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .feedback-modal-close-icon {
-    width: 24px;
-    height: 24px;
-  }
-}
-
 .is-hidden {
   display: none;
 }
 
-/* error */
+/* ===== error ======*/
 .input-error {
   border: 1px solid #af0404 !important;
   color: #af0404 !important;
@@ -258,6 +200,53 @@
   text-align: center;
 }
 
-.is-hidden {
-  display: none;
+/*================ Styles for Tablet devices ======================*/
+
+@media screen and (min-width: 768px) {
+  .feedback-modal-window {
+    padding: 64px 32px 83px;
+    width: 704px;
+    min-height: 688px;
+  }
+
+  .feedback-modal-title {
+    font-size: 44px;
+    line-height: 120%;
+    margin-bottom: 48px;
+  }
+
+  .feedback-modal-list {
+    margin-bottom: 24px;
+    gap: 24px;
+  }
+
+  .feedback-modal-input-tex {
+    height: 180px;
+  }
+
+  .feedback-modal-close-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .feedback-modal-submit {
+    width: 340px;
+  }
+}
+/*=========== Styles for Desktop devices ===========*/
+
+@media screen and (min-width: 1440px) {
+  .feedback-modal-window {
+    padding: 64px;
+    width: 864px;
+  }
+
+  .feedback-modal-title {
+    font-size: 60px;
+  }
+
+  .feedback-modal-close-icon {
+    width: 24px;
+    height: 24px;
+  }
 }

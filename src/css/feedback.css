@@ -33,13 +33,10 @@
   text-align: center;
   margin-block: 32px !important;
   margin: 0 auto;
-
-  /* Обмеження в 10 рядків */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 14;
   overflow: hidden;
-
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -52,7 +49,7 @@
 
 /* Ефект при наведенні, щоб підказати про клік */
 .feedback_description:hover {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .feedback_name {
@@ -107,75 +104,25 @@
   stroke: white !important;
 }
 
-@media screen and (min-width: 768px) {
-  .feedback_description {
-    font-size: 26px;
-    max-width: 518px !important;
-  }
-
-  :root {
-    --swiper-navigation-size: none !important;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-
-    /* Кольори та рамка */
-    background-color: #ffffff !important;
-    background-image: none !important;
-    border: 1px solid #4c9772 !important;
-    border-radius: 8px !important; /* Невеликий радіус замість кола */
-
-    /* Розміри самої кнопки */
-    width: 44px !important;
-    height: 44px !important;
-
-    /* Прибираємо стандартне зміщення Swiper, якщо воно заважає */
-    margin-top: 0 !important;
-    transform: translateY(-50%); /* Центрування по вертикалі */
-  }
-
-  .swiper-button-prev .icon,
-  .swiper-button-next .icon {
-    fill: none !important;
-    stroke: white !important;
-    stroke-width: 2px;
-    width: 24px;
-    height: 24px;
-    display: block;
-  }
-
-  .swiper-button-prev:hover,
-  .swiper-button-next:hover {
-    background-color: #4c9772 !important;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .feedback_description {
-    font-size: 32px;
-    line-height: 130%;
-    max-width: 886px;
-    -webkit-line-clamp: 14;
-  }
-  .feedback_name {
-    font-size: 24px;
-  }
-  .swiper-pagination {
-    margin-top: 75px;
-  }
-}
 .swiper-scrollbar {
   margin-bottom: 16px;
 }
-@media screen and (min-width: 1440px) {
-  .swiper-scrollbar {
-    margin-bottom: 80px;
-  }
+
+.feedback-modal-btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+  transition: filter 0.3s, transform 0.2s;
 }
+
+.feedback-modal-btn:focus {
+  background-color: white;
+  outline: auto;
+  border-color: #4c9772;
+  font-weight: 600;
+  color: #4c9772;
+  transition: background-color 0.3s ease, box-shadow 0.3s;
+}
+
 .feedback-modal-btn {
   line-height: 150%;
   display: block;
@@ -195,29 +142,76 @@
     inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
     inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05);
   background: #4c9772ff;
-}
-@media screen and (min-width: 768px) {
+
   .feedback-modal-btn {
-    width: 158px;
+    width: 220px;
+  }
+}
+
+/*================ Styles for Tablet devices ======================*/
+
+@media screen and (min-width: 768px) {
+  .feedback_description {
+    font-size: 26px;
+    max-width: 518px !important;
+  }
+
+  :root {
+    --swiper-navigation-size: none !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid #4c9772 !important;
+    border-radius: 8px !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin-top: 0 !important;
+    transform: translateY(-50%); /* Центрування по вертикалі */
+  }
+
+  .swiper-button-prev .icon,
+  .swiper-button-next .icon {
+    fill: none !important;
+    stroke: white !important;
+    stroke-width: 2px;
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background-color: #4c9772 !important;
+  }
+
+  .feedback-modal-btn {
+    width: 186px;
     padding: 0;
   }
 }
+
+/*=========== Styles for Desktop devices ===========*/
+
 @media screen and (min-width: 1440px) {
-  .feedback-modal-btn {
-    width: 177px;
+  .feedback_description {
+    font-size: 32px;
+    line-height: 130%;
+    max-width: 886px;
+    -webkit-line-clamp: 14;
   }
-}
-.feedback-modal-btn:hover {
-  filter: brightness(1.2);
-  transform: translateY(-1px);
-  transition: filter 0.3s, transform 0.2s;
-}
-
-.feedback-modal-btn:focus {
-  background-color: rgb(102, 102, 102);
-
-  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.15),
-    0 0 4px rgba(255, 255, 255, 0.05);
-  outline: none;
-  transition: background 0.3s ease, box-shadow 0.3s;
+  .feedback_name {
+    font-size: 24px;
+  }
+  .swiper-pagination {
+    margin-top: 75px;
+  }
+  .swiper-scrollbar {
+    margin-bottom: 80px;
+  }
 }
