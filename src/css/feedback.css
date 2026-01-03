@@ -7,7 +7,7 @@
   padding-block: 64px !important;
 }
 
-.swiper-wrapper {
+.feedback-swiper .swiper-wrapper {
   margin-top: 70px;
 }
 
@@ -30,15 +30,15 @@
   color: #222;
   font-size: 15px;
   line-height: 1.75em;
-  text-align: center;
   margin-block: 32px !important;
-  margin: 0 auto;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .feedback_description.is-open {
@@ -63,16 +63,22 @@
 .swiper-button-prev,
 .swiper-button-next {
   display: flex !important;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
+  background-color: transparent;
   background-image: none;
-  border: 1px solid #4c9772;
-  border-radius: 8px !important;
+  border: none;
   width: 44px !important;
   height: 44px !important;
-  margin-top: 0 !important;
-  transform: translateY(-50%); /* Центрування по вертикалі */
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  justify-content: flex-start !important;
+}
+.swiper-button-next {
+  justify-content: flex-end !important;
 }
 
 .swiper-button-prev .icon,
@@ -81,6 +87,7 @@
   width: 24px;
   height: 24px;
   display: block;
+  flex-shrink: 0;
 }
 
 .swiper-button-prev:hover,
@@ -103,16 +110,6 @@
 .swiper-button-next:active svg {
   fill: #294537 !important;
   transition: all 0.3s ease;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
 }
 
 .swiper-pagination {
@@ -185,6 +182,8 @@
 
 @media screen and (min-width: 768px) {
   .feedback_description {
+    margin: 0 auto;
+    align-items: center;
     font-size: 26px;
     max-width: 518px !important;
   }
@@ -195,7 +194,14 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .swiper-button-prev .icon,
+  .swiper-button-next .icon {
+    width: 44px;
+    height: 44px;
   }
 
   .swiper-pagination {
