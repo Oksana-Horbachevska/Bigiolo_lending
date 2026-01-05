@@ -47,9 +47,9 @@
   overflow: visible;
 }
 
-/* Ефект при наведенні, щоб підказати про клік */
 .feedback_description:hover {
   background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 15px;
 }
 
 .feedback_name {

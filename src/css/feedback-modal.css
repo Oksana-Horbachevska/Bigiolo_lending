@@ -176,21 +176,16 @@
 }
 
 /* ===== error ======*/
-.input-error {
-  border: 1px solid #af0404 !important;
-  color: #af0404 !important;
+.feedback-error {
+  color: #d93025;
+  font-size: 14px;
+  margin: 8px 0;
 }
 
-.input-error::placeholder {
-  color: #af0404;
-}
-
-.error-text {
-  font-weight: 400;
-  font-size: 12px;
-  color: #af0404;
-  line-height: 150%;
-  margin-top: 4px;
+.rating-error {
+  outline: 2px solid #d93025;
+  border-radius: 6px;
+  padding: 4px;
 }
 
 .feedback-success {

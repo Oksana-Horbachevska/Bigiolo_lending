@@ -6,7 +6,10 @@ const ratingInput = document.getElementById('rating-value');
 const stars = ratingEl.querySelectorAll('button');
 const feedbackForm = document.getElementById('feedback-form');
 const feedbackSuccessMsg = document.getElementById('feedback-success');
-const feedbackList = document.querySelector('.feedback-modal-list'); // щоб приховати поля після успіху
+const nameInput = document.getElementById('user-name');
+const messageInput = document.getElementById('user-message');
+const errorMessage = document.getElementById('feedback-error');
+const feedbackList = document.querySelector('.feedback-modal-list');
 const iframe = document.getElementById('hidden_iframe');
 
 let isSubmitted = false;
@@ -54,7 +57,6 @@ iframe.addEventListener('load', () => {
     setTimeout(() => {
       closeFeedbackModal({ type: 'keydown', key: 'Escape' });
 
-      // Повертаємо все в початковий стан для наступного відкриття
       setTimeout(() => {
         feedbackForm.style.display = 'block';
         if (title) title.style.display = 'block';
@@ -65,6 +67,27 @@ iframe.addEventListener('load', () => {
   }
 });
 
-feedbackForm.addEventListener('submit', () => {
+function showError() {
+  errorMessage.classList.remove('is-hidden');
+  ratingEl.classList.add('rating-error');
+}
+
+function hideError() {
+  errorMessage.classList.add('is-hidden');
+  ratingEl.classList.remove('rating-error');
+}
+
+feedbackForm.addEventListener('submit', e => {
+  const nameValid = nameInput.value.trim() !== '';
+  const messageValid = messageInput.value.trim() !== '';
+  const ratingValid = currentRating > 0;
+
+  if (!nameValid || !messageValid || !ratingValid) {
+    e.preventDefault(); // ⛔ блокуємо відправку
+    showError();
+    return;
+  }
+
+  hideError();
   isSubmitted = true;
 });

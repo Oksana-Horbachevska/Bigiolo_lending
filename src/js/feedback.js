@@ -5,12 +5,24 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-// Селектори
 const wrapper = document.querySelector('.feedback-container .swiper-wrapper');
-const SHEET_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSmwbeh0wcfzPaoNP18jTO7b5qbPxUKGZW55oibzdkk_qyXE0K8X85JqPh_fBGQG45bY6sRlRhAT9Hc/pub?output=csv';
+const form = document.querySelector('#feedback-form');
+const SHEET_URL = import.meta.env.VITE_FEEDBACK_SHEET_URL;
+const FORM_URL = import.meta.env.VITE_FEEDBACK_FORM_URL;
 
-let feedbackSwiper; // Перейменував для чіткості
+if (!SHEET_URL) {
+  console.error('VITE_FEEDBACK_SHEET_URL is not defined');
+}
+
+if (!FORM_URL) {
+  console.error('VITE_FEEDBACK_FORM_URL is not defined');
+}
+
+if (form && FORM_URL) {
+  form.action = FORM_URL;
+}
+
+let feedbackSwiper;
 
 async function loadReviews() {
   try {

@@ -15,10 +15,11 @@
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   },
+  "author": "Oksana Horbachevska <oksanapaolo@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "papaparse": "^5.5.3",
     "postcss-sort-media-queries": "^5.2.0",
-    "simplelightbox": "^2.14.3",
     "swiper": "^12.0.3"
   }
 }
