@@ -2,11 +2,10 @@
   <style>
     path {
       fill: #294537;
-
     }
     @media (prefers-color-scheme: dark) {
       path {
-        fill: #75da94;
+        fill: #75da94 !important;
             }
     }
   </style>
