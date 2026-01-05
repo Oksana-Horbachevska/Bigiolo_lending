@@ -10,6 +10,8 @@ const form = document.querySelector('#feedback-form');
 const SHEET_URL = import.meta.env.VITE_FEEDBACK_SHEET_URL;
 const FORM_URL = import.meta.env.VITE_FEEDBACK_FORM_URL;
 
+console.log('ENV:', import.meta.env);
+
 if (!SHEET_URL) {
   console.error('VITE_FEEDBACK_SHEET_URL is not defined');
 }
