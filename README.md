@@ -48,4 +48,4 @@ npm run dev
 Oksana Horbachevska
 GitHub: [@oksana-horbachevska](https://github.com/Oksana-Horbachevska) 
 
-Project Link: [🔗 Live Demo](https://oksana-horbachevska.github.io/project-BestDreamEver/)
+Project Link: [🔗 Live Demo](https://oksana-horbachevska.github.io/Bigiolo_lending/)
