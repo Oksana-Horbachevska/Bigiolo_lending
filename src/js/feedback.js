@@ -10,8 +10,6 @@ const form = document.querySelector('#feedback-form');
 const SHEET_URL = import.meta.env.VITE_FEEDBACK_SHEET_URL;
 const FORM_URL = import.meta.env.VITE_FEEDBACK_FORM_URL;
 
-console.log('ENV:', import.meta.env);
-
 if (!SHEET_URL) {
   console.error('VITE_FEEDBACK_SHEET_URL is not defined');
 }
@@ -87,7 +85,6 @@ function updateCustomPagination(s) {
 function initFeedbackSwiper() {
   if (feedbackSwiper) feedbackSwiper.destroy(true, true);
 
-  // Використовуємо специфічний клас .feedback-swiper
   feedbackSwiper = new Swiper('.feedback-swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
@@ -119,7 +116,6 @@ function initFeedbackSwiper() {
     updateCustomPagination(feedbackSwiper);
   }
 
-  // Обробка кліків по кастомним булетам
   const paginationEl = document.querySelector(
     '.feedback-container .swiper-pagination'
   );
@@ -136,9 +132,19 @@ function initFeedbackSwiper() {
   }
 }
 
-// Ініціалізація галереї La Casa
+function updateCasaPagination(s) {
+  const bullets = document.querySelectorAll(
+    '.la-casa-pagination .la-casa-pagination-bullet'
+  );
+  if (!bullets.length) return;
+  bullets.forEach(b => b.classList.remove('la-casa-pagination-bullet-active'));
+  const activeIndexMod5 = s.realIndex % 5;
+  bullets[activeIndexMod5]?.classList.add('la-casa-pagination-bullet-active');
+}
+
+//========== Pagination La Casa =========================
 function initCasaSwiper() {
-  new Swiper('.la-casa-swiper', {
+  const casaSwiper = new Swiper('.la-casa-swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 20,
@@ -149,13 +155,36 @@ function initCasaSwiper() {
     },
     pagination: {
       el: '.la-casa-pagination',
-      clickable: true,
-      bulletClass: 'la-casa-pagination-bullet',
-      bulletActiveClass: 'la-casa-pagination-bullet-active',
+      type: 'custom',
+      renderCustom() {
+        let bulletsHtml = '';
+        for (let i = 0; i < 5; i++) {
+          bulletsHtml += `<span class="la-casa-pagination-bullet" data-casa-index="${i}"></span>`;
+        }
+        return bulletsHtml;
+      },
+    },
+    on: {
+      init: function (s) {
+        updateCasaPagination(s);
+      },
+      slideChange: function (s) {
+        updateCasaPagination(s);
+      },
     },
   });
+
+  const paginationEl = document.querySelector('.la-casa-pagination');
+  if (paginationEl) {
+    paginationEl.addEventListener('click', e => {
+      const bullet = e.target.closest('.la-casa-pagination-bullet');
+      if (!bullet) return;
+      const targetIndex = parseInt(bullet.dataset.casaIndex);
+      casaSwiper.slideToLoop(targetIndex);
+    });
+  }
 }
 
-// Запуск усього
+// Initialize everything
 loadReviews();
 initCasaSwiper();
