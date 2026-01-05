@@ -123,12 +123,16 @@
 }
 
 .casa-send-Btn {
-  line-height: 150%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1.5;
   margin: 0 auto;
   border-radius: 12px;
   padding: 10px 24px;
   width: 100%;
+  max-width: 100%;
   height: 47px;
   color: #4c9772ff;
   font-size: 18px;
@@ -142,6 +146,8 @@
     inset 0px 0px 0px 1px rgba(6, 3, 7, 0.15),
     inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
     inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05);
+
+  transition: all 0.3s ease;
 }
 
 .casa-send-Btn:hover {
@@ -154,11 +160,12 @@
 
 .casa-send-Btn:focus {
   background-color: #4a7b63;
-  outline: auto;
+  outline: none;
   border-color: white;
   font-weight: 500;
   color: white;
-  transition: background-color 0.3s ease, box-shadow 0.3s;
+  box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px #4a7b63;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /*================ Styles for Tablet devices ======================*/
