@@ -13,9 +13,11 @@ Frontend: HTML5, CSS3 (BEM Methodology, Flexbox/Grid), JavaScript (ES6+).
 
 Tools: Vite for lightning-fast bundling.
 
-Libraries: * Swiper.js for modern touch sliders.
+Google Services: Google Forms API, Google Sheets (DB).
 
-PapaParse for handling CSV data (reviews/pricing).
+Data Handling: PapaParse for CSV-to-JSON conversion.
+
+Libraries: Swiper.js for modern touch sliders.
 
 Modern-normalize for cross-browser consistency.
 
@@ -31,6 +33,17 @@ High Priority Loading: Critical assets use fetchpriority="high" to ensure the fa
 Interactive Gallery: A smooth, touch-enabled slider powered by Swiper.js.
 
 Accessibility First: Fully navigable via screen readers with discernible link names and high-contrast typography.
+
+
+##  📊 External Data & Lead Management
+
+To ensure efficient management of guest inquiries and reviews, the project integrates Google Workspace tools:
+
+ - Google Forms Integration: The contact and booking forms are linked to a custom Google Form, allowing for seamless data collection without a dedicated backend.
+
+ - Google Sheets as a Database: All form submissions and guest reviews are automatically synchronized with a Google Sheet, serving as a lightweight and accessible database.
+
+ - Dynamic Data Fetching: Guest reviews are fetched and parsed in real-time using PapaParse, ensuring the "Feedback" section is always up-to-date with the latest entries from the spreadsheet.
 
 
 ## ⚙️ Installation
