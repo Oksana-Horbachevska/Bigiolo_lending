@@ -2,15 +2,12 @@
   <style>
     path {
       fill: #294537;
-      stroke: white;
-      stroke-width: 1;
-      stroke-linejoin: round;
+
     }
     @media (prefers-color-scheme: dark) {
       path {
         fill: #75da94;
-        stroke: #1a1a1a;
-      }
+            }
     }
   </style>
   <path d="M28 4v24h-8v-8h-8v8h-8v-24h4v4h4v-4h8v4h4v-4h4z"></path>
