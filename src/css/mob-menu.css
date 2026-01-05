@@ -39,7 +39,10 @@
 }
 
 .mob-menu-logo-icon {
+  width: 160px;
+  height: 48px;
   fill: rgb(34, 34, 34);
+  color: rgb(34, 34, 34);
   transition: all 0.3s ease;
 }
 
@@ -47,6 +50,7 @@
 .mob-menu-logo-icon:focus,
 .mob-menu-logo-icon:active {
   fill: #75da94;
+  color: #75da94;
 }
 
 .mob-menu-close {

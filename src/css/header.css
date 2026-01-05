@@ -27,19 +27,22 @@
 }
 
 .logo-header {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  align-items: flex-end;
 }
 
 .icon-logo {
-  width: 119px;
-  height: 51px;
+  display: block;
+  width: 160px;
+  height: 48px;
   fill: white;
+  color: white;
 }
 
 .icon-logo:hover,
 .icon-logo:focus {
   fill: #75da94;
+  color: #75da94;
 }
 
 .nav-list {
@@ -205,5 +208,10 @@ section {
 
   .nav-link {
     font-size: 15px;
+  }
+
+  .icon-logo {
+    width: 180px;
+    height: 51px;
   }
 }
