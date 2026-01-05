@@ -1,5 +1,5 @@
 
-# 🌿 Bigiolo
+# 🏠 Bigiolo
 
 ![HTML5](https://img.shields.io/badge/HTML5-orange?style=flat-square\&logo=html5\&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-blue?style=flat-square\&logo=css3\&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat-square\&logo=javascript\&logoColor=yellow) 
 
@@ -20,6 +20,17 @@ PapaParse for handling CSV data (reviews/pricing).
 Modern-normalize for cross-browser consistency.
 
 
+## ✨ Key Features
+
+Responsive Architecture: Fluid layouts for mobile, tablet, and desktop views.
+
+Optimized Image Delivery: Utilization of .avif formats and responsive srcset to reduce data transfer.
+
+High Priority Loading: Critical assets use fetchpriority="high" to ensure the fastest possible Largest Contentful Paint (LCP).
+
+Interactive Gallery: A smooth, touch-enabled slider powered by Swiper.js.
+
+Accessibility First: Fully navigable via screen readers with discernible link names and high-contrast typography.
 
 
 ## ⚙️ Installation
@@ -31,13 +42,6 @@ npm run dev
 
 ```
 
-
-## 🔧 Optimization Techniques Applied
-
-- Image Compression: All media assets are compressed and resized for specific breakpoints.
-- Critical Path CSS: Minimized render-blocking requests by locally hosting core libraries.
-- Contrast Correction: Color palette adjusted to meet WCAG AA standards for better readability.
-- Semantic HTML: Strict adherence to heading hierarchies and ARIA roles for superior SEO and accessibility.
 
 ## 👩‍💻 Author
 
