@@ -139,16 +139,18 @@ section {
 }
 
 .header--scrolled .burger-icon {
-  stroke: #222;
+  stroke: #666;
 }
 
 .header--scrolled .icon-logo {
-  fill: #222;
+  fill: #666;
+  color: #666;
 }
 
 .header--scrolled .icon-logo:hover,
 .header--scrolled .icon-logo:focus {
   fill: #75da94;
+  color: #75da94;
 }
 
 .header--scrolled .nav-link:hover,

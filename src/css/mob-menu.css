@@ -41,8 +41,8 @@
 .mob-menu-logo-icon {
   width: 160px;
   height: 48px;
-  fill: rgb(34, 34, 34);
-  color: rgb(34, 34, 34);
+  fill: #666;
+  color: #666;
   transition: all 0.3s ease;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .mob-menu-close-icon {
-  stroke: rgb(34, 34, 34);
+  stroke: #666;
   transition: all 0.3s ease;
 }
 
