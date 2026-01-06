@@ -1,55 +1,73 @@
 
 # 🏠 Bigiolo
 
-![HTML5](https://img.shields.io/badge/HTML5-orange?style=flat-square\&logo=html5\&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-blue?style=flat-square\&logo=css3\&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat-square\&logo=javascript\&logoColor=yellow) 
+**HTML5 · CSS3 · JavaScript**
 
-Bigiolo is a premium, high-performance landing page designed for a vacation rental property in the heart of Tuscany (Greve in Chianti). This project focuses on delivering a seamless user experience through exceptional speed, accessibility, and modern web standards.
-The focus of the project is clean and semantic HTML, responsive layout, scalable architecture, and modern frontend tooling. 
+**Bigiolo** is a premium, high-performance landing page designed for a vacation rental property in the heart of **Tuscany, Italy (Greve in Chianti)**.
 
+This project focuses on delivering a seamless user experience through exceptional speed, accessibility, and modern web standards. The emphasis is on clean and semantic HTML, responsive layouts, scalable architecture, and modern frontend tooling.
+
+---
 
 ## 🛠️ Tech Stack
 
-Frontend: HTML5, CSS3 (BEM Methodology, Flexbox/Grid), JavaScript (ES6+).
+### Frontend
+- **HTML5** — semantic and accessible markup  
+- **CSS3** — BEM methodology, Flexbox, Grid  
+- **JavaScript (ES6+)** — modular, maintainable code  
 
-Tools: Vite for lightning-fast bundling.
+### Tooling
+- **Vite** — lightning-fast development server and optimized production builds  
 
-Google Services: Google Forms API, Google Sheets (DB).
+### Libraries & Utilities
+- **Swiper.js** — modern, touch-enabled sliders  
+- **PapaParse** — CSV → JSON parsing for dynamic content  
+- **modern-normalize** — consistent cross-browser styling  
 
-Data Handling: PapaParse for CSV-to-JSON conversion.
+### Google Services
+- **Google Forms** — form handling without a backend  
+- **Google Sheets** — lightweight database for form submissions and reviews  
 
-Libraries: Swiper.js for modern touch sliders.
-
-Modern-normalize for cross-browser consistency.
-
+---
 
 ## ✨ Key Features
 
-Responsive Architecture: Fluid layouts for mobile, tablet, and desktop views.
+- **Responsive Architecture**  
+  Fully responsive layouts optimized for mobile, tablet, and desktop devices.
 
-Optimized Image Delivery: Utilization of .avif formats and responsive srcset to reduce data transfer.
+- **Optimized Image Delivery**  
+  Uses modern image formats (`.avif`) and responsive `srcset` to minimize data transfer.
 
-High Priority Loading: Critical assets use fetchpriority="high" to ensure the fastest possible Largest Contentful Paint (LCP).
+- **Performance-Focused Loading**  
+  Critical assets are prioritized using `fetchpriority="high"` to improve **Largest Contentful Paint (LCP)**.
 
-Interactive Gallery: A smooth, touch-enabled slider powered by Swiper.js.
+- **Interactive Gallery**  
+  Smooth, touch-enabled image slider powered by **Swiper.js**.
 
-Accessibility First: Fully navigable via screen readers with discernible link names and high-contrast typography.
+- **Accessibility First**  
+  Screen-reader friendly structure, discernible link names, and high-contrast typography.
 
+---
 
-##  📊 External Data & Lead Management
+## 📊 External Data & Lead Management
 
-To ensure efficient management of guest inquiries and reviews, the project integrates Google Workspace tools:
+To manage guest inquiries and reviews efficiently, the project integrates **Google Workspace tools**:
 
- - Google Forms Integration: The contact and booking forms are linked to a custom Google Form, allowing for seamless data collection without a dedicated backend.
+- **Google Forms Integration**  
+  Contact and feedback forms submit data directly to a custom Google Form — no backend required.
 
- - Google Sheets as a Database: All form submissions and guest reviews are automatically synchronized with a Google Sheet, serving as a lightweight and accessible database.
+- **Google Sheets as a Database**  
+  All submissions are automatically synchronized to a Google Sheet, acting as a lightweight and transparent database.
 
- - Dynamic Data Fetching: Guest reviews are fetched and parsed in real-time using PapaParse, ensuring the "Feedback" section is always up-to-date with the latest entries from the spreadsheet.
+- **Dynamic Data Fetching**  
+  Guest reviews are fetched and parsed in real time using **PapaParse**, ensuring the *Feedback* section always displays the latest data.
 
-
+---
 ## ⚙️ Installation
 
 ```bash
 git clone https://github.com/oksana-horbachevska/Bigiolo_lending.git
+cd Bigiolo_lending
 npm install
 npm run dev
 
@@ -62,3 +80,5 @@ Oksana Horbachevska
 GitHub: [@oksana-horbachevska](https://github.com/Oksana-Horbachevska) 
 
 Project Link: [🔗 Live Demo](https://oksana-horbachevska.github.io/Bigiolo_lending/)
+
+
