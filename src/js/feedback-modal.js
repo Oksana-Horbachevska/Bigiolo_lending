@@ -83,8 +83,7 @@ feedbackForm.addEventListener('submit', e => {
   const ratingValid = currentRating > 0;
 
   if (!nameValid || !messageValid || !ratingValid) {
-    e.preventDefault(); // ⛔ блокуємо відправку
-    showError();
+    e.preventDefault(); // ⛔ block submitting
     return;
   }
 

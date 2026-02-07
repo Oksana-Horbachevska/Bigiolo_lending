@@ -64,22 +64,15 @@ async function loadReviews() {
   }
 }
 
-function updateCustomPagination(s) {
+function updateFeedbackPagination(s) {
   const bullets = document.querySelectorAll(
     '.feedback-container .swiper-pagination-bullet'
   );
-  if (!bullets.length || !s.slides) return;
+  if (!bullets.length) return;
 
   bullets.forEach(b => b.classList.remove('swiper-pagination-bullet-active'));
-  const lastIndex = s.slides.length - 1;
-
-  if (s.activeIndex === 0) {
-    bullets[0]?.classList.add('swiper-pagination-bullet-active');
-  } else if (s.activeIndex === lastIndex) {
-    bullets[2]?.classList.add('swiper-pagination-bullet-active');
-  } else {
-    bullets[1]?.classList.add('swiper-pagination-bullet-active');
-  }
+  const activeIndexMod5 = s.activeIndex % 5;
+  bullets[activeIndexMod5]?.classList.add('swiper-pagination-bullet-active');
 }
 
 function initFeedbackSwiper() {
@@ -92,15 +85,20 @@ function initFeedbackSwiper() {
     autoHeight: true,
     observer: true,
     observeParents: true,
+    touchEventsTarget: 'wrapper',
     pagination: {
       el: '.feedback-container .swiper-pagination',
       type: 'custom',
       renderCustom() {
-        return `
-          <span class="swiper-pagination-bullet" data-index="first"></span>
-          <span class="swiper-pagination-bullet" data-index="middle"></span>
-          <span class="swiper-pagination-bullet" data-index="last"></span>
-        `;
+        let bulletsHtml = '';
+        for (let i = 0; i < 5; i++) {
+          bulletsHtml += `
+      <span
+        class="swiper-pagination-bullet"
+        data-feedback-index="${i}">
+      </span>`;
+        }
+        return bulletsHtml;
       },
     },
     navigation: {
@@ -111,9 +109,9 @@ function initFeedbackSwiper() {
 
   if (feedbackSwiper && feedbackSwiper.on) {
     feedbackSwiper.on('slideChange', () =>
-      updateCustomPagination(feedbackSwiper)
+      updateFeedbackPagination(feedbackSwiper)
     );
-    updateCustomPagination(feedbackSwiper);
+    updateFeedbackPagination(feedbackSwiper);
   }
 
   const paginationEl = document.querySelector(
@@ -123,11 +121,9 @@ function initFeedbackSwiper() {
     paginationEl.addEventListener('click', e => {
       const bullet = e.target.closest('.swiper-pagination-bullet');
       if (!bullet || !feedbackSwiper) return;
-      const count = feedbackSwiper.slides.length;
-      if (bullet.dataset.index === 'first') feedbackSwiper.slideTo(0);
-      if (bullet.dataset.index === 'middle')
-        feedbackSwiper.slideTo(Math.floor(count / 2));
-      if (bullet.dataset.index === 'last') feedbackSwiper.slideTo(count - 1);
+      const targetIndex = parseInt(bullet.dataset.feedbackIndex);
+
+      feedbackSwiper.slideTo(targetIndex);
     });
   }
 }
