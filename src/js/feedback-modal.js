@@ -22,6 +22,7 @@ function openFeedbackModal() {
 }
 
 function closeFeedbackModal(e) {
+  // Ignore key presses except Escape
   if (e.type === 'keydown' && e.key !== 'Escape') return;
   feedbackModal.classList.add('is-hidden');
   document.body.classList.remove('no-scroll');
@@ -31,6 +32,7 @@ function closeFeedbackModal(e) {
 feedbackOpenBtn.addEventListener('click', openFeedbackModal);
 feedbackCloseBtn.addEventListener('click', closeFeedbackModal);
 
+/** Handle star rating click*/
 stars.forEach(star => {
   star.addEventListener('click', () => {
     currentRating = Number(star.dataset.value);
@@ -42,9 +44,11 @@ stars.forEach(star => {
   });
 });
 
+/**Triggered after the form is submitted to the iframe */
 iframe.addEventListener('load', () => {
   if (isSubmitted) {
     feedbackForm.style.display = 'none';
+
     const title = document.querySelector('.feedback-modal-title');
     if (title) title.style.display = 'none';
     feedbackSuccessMsg.classList.remove('is-hidden');
@@ -67,24 +71,26 @@ iframe.addEventListener('load', () => {
   }
 });
 
+/** Shows validation error message  */
 function showError() {
   errorMessage.classList.remove('is-hidden');
   ratingEl.classList.add('rating-error');
 }
 
+/** Hides validation error message  */
 function hideError() {
   errorMessage.classList.add('is-hidden');
   ratingEl.classList.remove('rating-error');
 }
 
+/** Form validation before submit  */
 feedbackForm.addEventListener('submit', e => {
   const nameValid = nameInput.value.trim() !== '';
   const messageValid = messageInput.value.trim() !== '';
   const ratingValid = currentRating > 0;
 
   if (!nameValid || !messageValid || !ratingValid) {
-    e.preventDefault(); // ⛔ block submitting
-    return;
+    e.preventDefault(); // ⛔  stop form submission
   }
 
   hideError();

@@ -7,23 +7,26 @@ import 'swiper/css/navigation';
 
 const wrapper = document.querySelector('.feedback-container .swiper-wrapper');
 const form = document.querySelector('#feedback-form');
+
+// Environment variables
 const SHEET_URL = import.meta.env.VITE_FEEDBACK_SHEET_URL;
 const FORM_URL = import.meta.env.VITE_FEEDBACK_FORM_URL;
 
+// Safety checks for env variables
 if (!SHEET_URL) {
   console.error('VITE_FEEDBACK_SHEET_URL is not defined');
 }
-
 if (!FORM_URL) {
   console.error('VITE_FEEDBACK_FORM_URL is not defined');
 }
-
+// Dynamically set Google Form action
 if (form && FORM_URL) {
   form.action = FORM_URL;
 }
 
 let feedbackSwiper;
 
+/* ==========Load reviews from Google Sheet (CSV), parse them and render Swiper slides ===========*/
 async function loadReviews() {
   try {
     const res = await fetch(SHEET_URL);
@@ -40,6 +43,7 @@ async function loadReviews() {
 
       if (!name || !message) return;
 
+      // Create slide
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
       slide.innerHTML = `
@@ -47,10 +51,11 @@ async function loadReviews() {
         <p class="feedback_description" title="Click to read more">${message}</p>
         <span class="feedback_name">${name}</span>
       `;
-
+      // Toggle expanded review text
       const desc = slide.querySelector('.feedback_description');
       desc.addEventListener('click', () => {
         desc.classList.toggle('is-open');
+        // Recalculate Swiper height after content change
         if (feedbackSwiper) {
           setTimeout(() => feedbackSwiper.updateAutoHeight(300), 10);
         }
@@ -64,6 +69,7 @@ async function loadReviews() {
   }
 }
 
+/* ===========Update custom feedback pagination (5 bullets), Active bullet is calculated via modulo ============*/
 function updateFeedbackPagination(s) {
   const bullets = document.querySelectorAll(
     '.feedback-container .swiper-pagination-bullet'
@@ -76,6 +82,7 @@ function updateFeedbackPagination(s) {
 }
 
 function initFeedbackSwiper() {
+  // Destroy previous instance if exists
   if (feedbackSwiper) feedbackSwiper.destroy(true, true);
 
   feedbackSwiper = new Swiper('.feedback-swiper', {
@@ -86,6 +93,7 @@ function initFeedbackSwiper() {
     observer: true,
     observeParents: true,
     touchEventsTarget: 'wrapper',
+    // Custom pagination with 5 fixed bullets
     pagination: {
       el: '.feedback-container .swiper-pagination',
       type: 'custom',
@@ -101,6 +109,7 @@ function initFeedbackSwiper() {
         return bulletsHtml;
       },
     },
+    // Navigation arrows
     navigation: {
       nextEl: '.feedback-container .swiper-button-next',
       prevEl: '.feedback-container .swiper-button-prev',
@@ -113,7 +122,7 @@ function initFeedbackSwiper() {
     );
     updateFeedbackPagination(feedbackSwiper);
   }
-
+  // Handle pagination bullet clicks
   const paginationEl = document.querySelector(
     '.feedback-container .swiper-pagination'
   );
@@ -128,6 +137,7 @@ function initFeedbackSwiper() {
   }
 }
 
+/**================Update La Casa pagination (5 bullets, looped) ============ */
 function updateCasaPagination(s) {
   const bullets = document.querySelectorAll(
     '.la-casa-pagination .la-casa-pagination-bullet'
@@ -138,7 +148,6 @@ function updateCasaPagination(s) {
   bullets[activeIndexMod5]?.classList.add('la-casa-pagination-bullet-active');
 }
 
-//========== Pagination La Casa =========================
 function initCasaSwiper() {
   const casaSwiper = new Swiper('.la-casa-swiper', {
     modules: [Navigation, Pagination],
@@ -149,6 +158,7 @@ function initCasaSwiper() {
       nextEl: '.la-casa-next',
       prevEl: '.la-casa-prev',
     },
+    // Custom pagination with 5 bullets
     pagination: {
       el: '.la-casa-pagination',
       type: 'custom',
@@ -169,7 +179,7 @@ function initCasaSwiper() {
       },
     },
   });
-
+  // Handle pagination clicks
   const paginationEl = document.querySelector('.la-casa-pagination');
   if (paginationEl) {
     paginationEl.addEventListener('click', e => {
@@ -181,6 +191,6 @@ function initCasaSwiper() {
   }
 }
 
-// Initialize everything
+// Initialize all sliders
 loadReviews();
 initCasaSwiper();
