@@ -36,7 +36,7 @@
 }
 
 .bold-words-black {
-  color: #fdf5e6;
+  color: yellowgreen;
   font-weight: 600;
   font-size: 16px;
 }
@@ -142,7 +142,8 @@
   cursor: pointer;
 
   background: white;
-  box-shadow: 0px 1px 2px 0px rgba(6, 3, 7, 0.05),
+  box-shadow:
+    0px 1px 2px 0px rgba(6, 3, 7, 0.05),
     inset 0px -2px 1px 0px rgba(0, 0, 0, 0.2),
     inset 0px 0px 0px 1px rgba(6, 3, 7, 0.15),
     inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
@@ -154,7 +155,9 @@
 .casa-send-Btn:hover {
   filter: brightness(1.2);
   transform: translateY(-1px);
-  transition: filter 0.3s, transform 0.2s;
+  transition:
+    filter 0.3s,
+    transform 0.2s;
   color: #1e352a;
   font-weight: 600;
 }
@@ -165,8 +168,13 @@
   border-color: white;
   font-weight: 500;
   color: white;
-  box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px #4a7b63;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    0px 0px 0px 2px white,
+    0px 0px 0px 4px #4a7b63;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /*================ Styles for Tablet devices ======================*/

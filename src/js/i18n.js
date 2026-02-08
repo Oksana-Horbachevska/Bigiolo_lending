@@ -5,7 +5,9 @@ let translations = {};
 
 /* Load translations JSON for selected language */
 async function loadTranslations(lang) {
-  const response = await fetch(`/locales/${lang}.json`);
+  const response = await fetch(
+    `${import.meta.env.BASE_URL}locales/${lang}.json`
+  );
   translations = await response.json();
 }
 
