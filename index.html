@@ -35,7 +35,7 @@
     <script type="module" crossorigin src="/Bigiolo_lending/index.js"></script>
     <link rel="modulepreload" crossorigin href="/Bigiolo_lending/assets/vendor-_KeN8Zr_.js">
     <link rel="stylesheet" crossorigin href="/Bigiolo_lending/assets/vendor-DnCYt7K8.css">
-    <link rel="stylesheet" crossorigin href="/Bigiolo_lending/assets/index-DETBqN93.css">
+    <link rel="stylesheet" crossorigin href="/Bigiolo_lending/assets/index-BCPMkhrj.css">
   </head>
   <body>
     <header class="header" id="header">
@@ -76,11 +76,23 @@
       </ul>
       <!-- Language switch -->
       <div class="lang-switch">
-        <button type="button" data-lang="it" class="lang-btn is-active">
-          IT
+        <button
+          type="button"
+          data-lang="it"
+          class="lang-btn is-active"
+          aria-label="Italian language"
+        >
+          <img class="lang-flag" src="/Bigiolo_lending/it.svg" alt="Italian" />
         </button>
         <span>|</span>
-        <button type="button" data-lang="en" class="lang-btn">EN</button>
+        <button
+          type="button"
+          data-lang="en"
+          class="lang-btn"
+          aria-label="English language"
+        >
+          <img class="lang-flag" src="/Bigiolo_lending/gb.svg" alt="English" />
+        </button>
       </div>
     </nav>
 
@@ -137,6 +149,26 @@
           >
         </li>
       </ul>
+      <!-- Language switch -->
+      <div class="mob-lang-switch">
+        <button
+          type="button"
+          data-lang="it"
+          class="lang-btn is-active"
+          aria-label="Italian language"
+        >
+          <img class="lang-flag" src="/Bigiolo_lending/it.svg" alt="Italian" />
+        </button>
+        <span>|</span>
+        <button
+          type="button"
+          data-lang="en"
+          class="lang-btn"
+          aria-label="English language"
+        >
+          <img class="lang-flag" src="/Bigiolo_lending/gb.svg" alt="English" />
+        </button>
+      </div>
     </nav>
   </div>
 </div>
@@ -156,9 +188,9 @@
   <div class="container about-container">
     <div class="about-content-wrapper">
       <div class="section-subtitle-green">Bigiolo a Melazzano</div>
-      <div class="section-title-green">Chi siamo</div>
-      <p class="about-text">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis,
+      <div class="section-title-green" data-i18n="about.title">Chi siamo</div>
+      <p class="about-text" data-i18n="about.text">
+        IT Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis,
         aliquam autem? Recusandae
         <span class="bold-words">perferendis labore</span> perferendis labore
         tempore, cumque soluta non molestias tempora sunt libero repellendus vel
@@ -190,9 +222,9 @@
   <div class="container la-casa-container">
     <div class="title-wrapper">
       <div class="section-subtitle">Bigiolo a Melazzano</div>
-      <div class="section-title">La Casa</div>
+      <div class="section-title" data-i18n="house.title">La Casa</div>
     </div>
-    <p class="casa-description">
+    <p class="casa-description" data-i18n-html="house.description">
       La casa Bigiolo risale al periodo medievale ed è stata recentemente
       ristrutturata per garantire il massimo comfort ai nostri ospiti,
       mantenendo intatto il loro carattere autentico. La casa è il luogo ideale
@@ -460,12 +492,15 @@
       <div class="swiper-pagination la-casa-pagination"></div>
     </div>
 
-    <p class="casa-description">CONTATTACI PER PRENOTARE</p>
+    <p class="casa-description" data-i18n="house.contactus">
+      CONTATTACI PER PRENOTARE
+    </p>
     <a
       href="https://www.vrbo.com/it-it/affitto-vacanze/p11453736?dateless=true&flexibility=1_DAY&x_pwa=1&rfrr=HSR&pwa_ts=1767631349352&referrerUrl=aHR0cHM6Ly93d3cudnJiby5jb20vSG90ZWwtU2VhcmNo&useRewards=false&adults=6&regionId=601773&destination=Greve+in+Chianti%2C+Toscana%2C+Italia&destType=MARKET&latLong=43.583065%2C11.318682&searchId=1c6f7755-689c-4c00-8253-58912d35557b&sort=RECOMMENDED&userIntent=&expediaPropertyId=101401634"
       class="casa-send-Btn"
       target="_blank"
       rel="noopener noreferrer"
+      data-i18n="house.button"
     >
       Prenota</a
     >
@@ -476,22 +511,26 @@
   <div class="container servizi-container">
     <div class="title-wrapper">
       <div class="section-subtitle-green">Bigiolo a Melazzano</div>
-      <div class="section-title-green">Servizi</div>
+      <div class="section-title-green" data-i18n="services.title">Servizi</div>
     </div>
     <ul class="services-list">
       <li class="services-item">
         <svg class="servise-svg" width="45" height="45">
           <use href="/Bigiolo_lending/icons.svg#icon-pool" />
         </svg>
-        <h2 class="service-title">Piscina</h2>
-        <p class="service-description">Rilassa in piscina tutta tua</p>
+        <h2 class="service-title" data-i18n="services.poolTitle">Piscina</h2>
+        <p class="service-description" data-i18n="services.poolDescription">
+          Rilassa in piscina tutta tua
+        </p>
       </li>
       <li class="services-item">
         <svg class="servise-svg" width="45" height="45">
           <use href="/Bigiolo_lending/icons.svg#icon-wi-fi" />
         </svg>
-        <h2 class="service-title">Internet</h2>
-        <p class="service-description">
+        <h2 class="service-title" data-i18n="services.internetTitle">
+          Internet
+        </h2>
+        <p class="service-description" data-i18n="services.internetDescription">
           Connessione Wifi disponibile in tutta la struttura
         </p>
       </li>
@@ -499,8 +538,10 @@
         <svg class="servise-svg" width="45" height="45">
           <use href="/Bigiolo_lending/icons.svg#icon-car" />
         </svg>
-        <h2 class="service-title">Parcheggio</h2>
-        <p class="service-description">
+        <h2 class="service-title" data-i18n="services.parkingTitle">
+          Parcheggio
+        </h2>
+        <p class="service-description" data-i18n="services.parkingDescription">
           Parcheggia in tranquillità nel nostro parcheggio privato
         </p>
       </li>
@@ -508,8 +549,10 @@
         <svg class="servise-svg" width="45" height="45">
           <use href="/Bigiolo_lending/icons.svg#icon-cord" />
         </svg>
-        <h2 class="service-title">Colonnina</h2>
-        <p class="service-description">
+        <h2 class="service-title" data-i18n="services.chargeTitle">
+          Colonnina
+        </h2>
+        <p class="service-description" data-i18n="services.chargeDescription">
           Colonnina privata di ricarica per autovettura
         </p>
       </li>
@@ -517,15 +560,21 @@
         <svg class="servise-svg" width="45" height="45">
           <use href="/Bigiolo_lending/icons.svg#icon-air" />
         </svg>
-        <h2 class="service-title">Area condizionata</h2>
-        <p class="service-description">Aria condizionata in casa</p>
+        <h2 class="service-title" data-i18n="services.airTitle">
+          Area condizionata
+        </h2>
+        <p class="service-description" data-i18n="services.airDescription">
+          Aria condizionata in casa
+        </p>
       </li>
       <li class="services-item">
         <svg class="servise-svg" width="45" height="45">
           <use href="/Bigiolo_lending/icons.svg#icon-washingmachine" />
         </svg>
-        <h2 class="service-title">Lavatrice</h2>
-        <p class="service-description">
+        <h2 class="service-title" data-i18n="services.washingTitle">
+          Lavatrice
+        </h2>
+        <p class="service-description" data-i18n="services.washingDescription">
           Usa tranquillamente una lavatrice in casa
         </p>
       </li>
@@ -537,8 +586,8 @@
   <div class="container vino-container">
     <div class="vino-content-wrapper">
       <div class="section-subtitle">Bigiolo a Melazzano</div>
-      <div class="section-title">Il Vino</div>
-      <p class="vino-text">
+      <div class="section-title" data-i18n="wine.title">Il Vino</div>
+      <p class="vino-text" data-i18n-html="wine.text">
         Le Terre di Melazzano, entro cui è situato il podere Casanova dè Benci,
         sono citate negli annali storici fiorentini dal XIV secolo come terre
         produttrici di olio e vino. A 400 metri d’altitudine nelle coline del
@@ -563,7 +612,9 @@
   <div class="container feedback-container">
     <div class="title-wrapper">
       <div class="section-subtitle-green">Bigiolo a Melazzano</div>
-      <div class="section-title-green">Recensioni</div>
+      <div class="section-title-green" data-i18n="reviews.title">
+        Recensioni
+      </div>
     </div>
     <div class="swiper feedback-swiper">
       <div class="swiper-wrapper"></div>
@@ -579,7 +630,12 @@
         </svg>
       </div>
       <div class="swiper-scrollbar"></div>
-      <button class="feedback-modal-btn" type="button" data-feedback-modal-open>
+      <button
+        class="feedback-modal-btn"
+        type="button"
+        data-feedback-modal-open
+        data-i18n="reviews.button"
+      >
         Lascia recensione
       </button>
     </div>
@@ -659,13 +715,13 @@
   <div class="container footer-container">
     <div class="info-wrapper">
       <h3 class="info-title">Bigiolo a Melazzano</h3>
-      <p class="info-content">
+      <p class="info-content" data-i18n="footer.address">
         Loc. Il Poggio 292, 53040 Celle sul Rigo S.Casciano dei Bagni (Greve in
         Chianti)
       </p>
     </div>
     <div class="info-wrapper">
-      <h3 class="info-title">Contatti</h3>
+      <h3 class="info-title" data-i18n="footer.contacts">Contatti</h3>
       <a href="tel:+393475331903" class="info-content info-phone">
         +39 347 533 1903
       </a>
