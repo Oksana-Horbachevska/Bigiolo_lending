@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT US",
+    "house": "THE HOUSE",
+    "services": "SERVICES",
+    "wine": "WINE",
+    "reviews": "REVIEWS"
+  },
+  "hero": {
+    "title": "Bigiolo: Holiday home in the heart of Chianti."
+  }
+}

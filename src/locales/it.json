@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "CHI SIAMO",
+    "house": "LA CASA",
+    "services": "SERVIZI",
+    "wine": "IL VINO",
+    "reviews": "RECENSIONI"
+  },
+  "hero": {
+    "title": "Bigiolo: Casa vacanze nel cuore del Chianti."
+  }
+}
