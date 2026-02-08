@@ -9,5 +9,42 @@
   },
   "hero": {
     "title": "Bigiolo: Casa vacanze nel cuore del Chianti."
+  },
+  "about": {
+    "title": "Chi siamo",
+    "text": "Testo di chi siamo"
+  },
+  "house": {
+    "title": "La Casa",
+    "description": "La casa Bigiolo risale al periodo medievale ed è stata recentemente ristrutturata per garantire il massimo comfort ai nostri ospiti, mantenendo intatto il loro carattere autentico. La casa è il luogo ideale per una vacanza all’insegna del <span class='bold-words-black'>relax e del benessere, lontano dallo stress e dalla frenesia della vita quotidiana.</span>",
+    "contactus": "CONTATTACI PER PRENOTARE",
+    "button": "Prenota"
+  },
+  "services": {
+    "title": "Servizi",
+    "poolTitle": "Piscina",
+    "poolDescription": "Rilassa in piscina tutta tua",
+    "internetTitle": "Internet",
+    "internetDescription": "Connessione Wifi disponibile in tutta la struttura",
+    "parkingTitle": "Parcheggio",
+    "parkingDescription": "Parcheggia in tranquillità nel nostro parcheggio privato",
+    "chargeTitle": "Colonnina",
+    "chargeDescription": "Colonnina privata di ricarica per autovettura",
+    "airTitle": "Area condizionata",
+    "airDescription": "Aria condizionata in casa",
+    "washingTitle": "Lavatrice",
+    "washingDescription": "Usa tranquillamente una lavatrice in casa"
+  },
+  "wine": {
+    "title": "Il Vino",
+    "text": "Le Terre di Melazzano, entro cui è situato il podere Casanova dè Benci, sono citate negli annali storici fiorentini dal XIV secolo come terre produttrici di olio e vino. A 400 metri d’altitudine nelle coline del Chianti, questo antico podere gode di un ottimo microclima e di un terreno vigoroso su cui prosperano <span class='vino-bold-words'>le vigne di Bigiòlo</span>costituite, prevalentemente, da uve di Sangiovese."
+  },
+  "reviews": {
+    "title": "Recensioni",
+    "button": " Lascia recensione"
+  },
+  "footer": {
+    "address": "Loc. Il Poggio 292, 53040 Celle sul Rigo S.Casciano dei Bagni (Greve in Chianti)",
+    "contacts": "Contatti"
   }
 }

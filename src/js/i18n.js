@@ -10,15 +10,33 @@ async function loadTranslations(lang) {
 }
 
 /* Replace text content for all elements with data-i18n attribute */
+function getValue(obj, path) {
+  return path
+    .split('.')
+    .reduce(
+      (acc, key) => (acc && acc[key] !== undefined ? acc[key] : null),
+      obj
+    );
+}
+
 function applyTranslations() {
+  // plain text
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    const value = key
-      .split('.')
-      .reduce((obj, k) => (obj ? obj[k] : null), translations);
+    const value = getValue(translations, key);
 
-    if (value) {
+    if (value !== null) {
       el.textContent = value;
+    }
+  });
+
+  // HTML text
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    const value = getValue(translations, key);
+
+    if (value !== null) {
+      el.innerHTML = value;
     }
   });
 }
