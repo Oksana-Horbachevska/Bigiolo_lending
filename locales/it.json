@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "CHI SIAMO",
+    "house": "LA CASA",
+    "services": "SERVIZI",
+    "wine": "IL VINO",
+    "reviews": "RECENSIONI"
+  },
+  "hero": {
+    "title": "Bigiolo: Casa vacanze nel cuore del Chianti."
+  },
+  "about": {
+    "title": "Chi siamo",
+    "text": "La casa colonica Bigiolo a Melazzano è un ritorno alle origini, nato dal desiderio di condividere la bellezza silenziosa delle colline del Chianti. Situato nel cuore di una piccola valle, il nostro progetto celebra il connubio tra storia rurale e comfort moderno. <br><br>Qui, tra i filari di Sangiovese e gli ulivi argentati, offriamo non solo una dimora, ma un'accoglienza fatta di persone. Dalla produzione propria di olio e vino alla cura per ogni dettaglio della casa, la nostra filosofia è semplice: <span class='bold-words'>farvi sentire parte di questa terra, anche solo per una stagione!</span>"
+  },
+  "house": {
+    "title": "La Casa",
+    "description": "La casa Bigiolo risale al periodo medievale ed è stata recentemente ristrutturata per garantire il massimo comfort ai nostri ospiti, mantenendo intatto il loro carattere autentico. La casa è il luogo ideale per una vacanza all’insegna del <span class='bold-words-black'>relax e del benessere, lontano dallo stress e dalla frenesia della vita quotidiana.</span>  <br><br>Immagina di percorrere una strada bianca che si snoda tra i vigneti di Greve in Chianti, lasciandoti alle spalle il rumore del mondo. Qui, nel piccolo borgo di Melazzano, sorge Bigiolo: un’antica dimora in pietra dove l’autenticità toscana trasforma ogni semplice vacanza in <span class='bold-words-black'>un ritorno alle origini.</span> Non è solo una villa, ma un invito a riscoprire il piacere della lentezza in un luogo dove il tempo sembra essersi fermato. <br><br>La vita a Bigiolo si dispiega tra i <span class='bold-words-black'>vari giardini</span> che circondano la proprietà, offrendo angoli di pace sempre diversi a seconda dell'ora del giorno. È in questi spazi verdi, curati e immersi nel paesaggio, che la convivialità prende forma: potrete organizzare una grigliata con gli amici attorno al barbecue o godervi una cena di famiglia sotto il cielo stellato, sempre accompagnati da un calice di Chianti Classico prodotto proprio tra queste colline. Questi giardini sono stati pensati per rendere unico ogni momento del vostro soggiorno, favorendo il relax e le chiacchiere che durano fino a notte fonda, avvolti dai profumi della campagna toscana. <br><br>Per chi cerca il riposo, <span class='bold-words-black'>la piscina privata</span> si affaccia come un balcone naturale sulle vigne, incastonata nel verde per offrire il perfetto equilibrio tra il divertimento dei più piccoli e il silenzio rigenerante richiesto dai più grandi. Gli interni, caratterizzati dal calore del cotto e dalla solidità della pietra, accolgono ogni ospite con la stessa cura che la nostra famiglia dedica alla produzione di olio e vino, garantendo una vacanza che è, prima di tutto, un'esperienza umana e sensoriale. <br><br>Scegliere di trascorrere un <span class='bold-words-black'>soggiorno a Bigiolo </span> significa anche esplorare l'anima del territorio, partendo proprio dai sentieri che nascono tra i nostri giardini. A pochi minuti di distanza, il fermento dei mercati di Greve e le storiche cantine di Panzano offrono un viaggio incredibile tra cibo e tradizioni. Che si tratti di una fuga romantica al tramonto o di una settimana alla scoperta dei borghi, questa casa è il rifugio ideale per chi vuole sentirsi parte di una terra unica, accolto da persone che amano condividere la bellezza del proprio territorio.",
+    "contactus": "CONTATTACI PER PRENOTARE",
+    "button": "Prenota"
+  },
+  "services": {
+    "title": "Servizi",
+    "poolTitle": "Piscina",
+    "poolDescription": "Rilassa in piscina tutta tua",
+    "internetTitle": "Internet",
+    "internetDescription": "Connessione Wifi disponibile in tutta la struttura",
+    "parkingTitle": "Parcheggio",
+    "parkingDescription": "Parcheggia in tranquillità nel nostro parcheggio privato",
+    "chargeTitle": "Colonnina",
+    "chargeDescription": "Colonnina privata di ricarica per autovettura",
+    "airTitle": "Area condizionata",
+    "airDescription": "Aria condizionata in casa",
+    "washingTitle": "Lavatrice",
+    "washingDescription": "Usa tranquillamente una lavatrice in casa"
+  },
+  "wine": {
+    "title": "Il Vino",
+    "text": "Le Terre di Melazzano, entro cui è situato il podere Casanova dè Benci, sono citate negli annali storici fiorentini dal XIV secolo come terre produttrici di olio e vino. A 400 metri d’altitudine nelle coline del Chianti, questo antico podere gode di un ottimo microclima e di un terreno vigoroso su cui prosperano <span class='vino-bold-words'>le vigne di Bigiòlo</span>costituite, prevalentemente, da uve di Sangiovese."
+  },
+  "reviews": {
+    "title": "Recensioni",
+    "button": " Lascia recensione"
+  },
+  "footer": {
+    "address": "Loc. Il Poggio 292, 53040 Celle sul Rigo S.Casciano dei Bagni (Greve in Chianti)",
+    "contacts": "Contatti"
+  }
+}
