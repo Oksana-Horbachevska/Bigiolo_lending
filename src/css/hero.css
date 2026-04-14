@@ -1,7 +1,7 @@
 .hero {
   width: 100%;
   background-color: #294537;
-  background-image: url(../img/hero/hero-mobile.avif);
+  background-image: url(../img/hero/hero-mobile-new.avif);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto 0 auto;
@@ -26,7 +26,7 @@
 @media screen and (min-width: 768px) {
   .hero {
     height: 680px;
-    background-image: url(../img/hero/hero-tablet.avif);
+    background-image: url(../img/hero/hero-tablet-new.avif);
   }
 
   .hero-title {
@@ -38,7 +38,7 @@
 @media screen and (min-width: 1440px) {
   .hero {
     height: 780px;
-    background-image: url(../img/hero/hero-desktop.avif);
+    background-image: url(../img/hero/hero-desktop-new.avif);
   }
 
   .hero-title {
