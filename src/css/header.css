@@ -31,6 +31,7 @@
 .logo-header {
   display: flex;
   align-items: flex-end;
+  flex-shrink: 0;
 }
 
 .icon-logo {
@@ -104,16 +105,26 @@
   align-items: center;
   display: flex;
   gap: 2px;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 6px;
 }
 
 .mob-lang-switch {
   margin-top: 40px;
 }
 
+.lang-switch span {
+  font-size: 14px;
+  color: #666;
+  user-select: none;
+}
+
 .lang-btn {
+  flex-shrink: 0;
   background: none;
   border: none;
-  padding: 4px;
+  padding: 2px;
   cursor: pointer;
   opacity: 0.5;
   transition:
@@ -131,12 +142,14 @@
 }
 
 .lang-flag {
-  width: 28px;
-  height: 18px;
+  width: 24px;
+  min-width: 24px;
+  height: 16px;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
 }
 
 .burger-button {
@@ -228,8 +241,21 @@ section {
   }
 
   .lang-switch {
-    margin-left: 20px;
     gap: 4px;
+  }
+
+  .lang-switch span {
+    font-size: 16px;
+  }
+
+  .lang-btn {
+    padding: 4px;
+  }
+
+  .lang-flag {
+    width: 28px;
+    min-width: 28px;
+    height: 18px;
   }
 
   .burger-button {
@@ -264,7 +290,6 @@ section {
   }
 
   .lang-switch {
-    margin-left: 0px;
     gap: 6px;
   }
 }
