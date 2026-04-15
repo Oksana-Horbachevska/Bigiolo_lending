@@ -241,6 +241,7 @@ section {
   }
 
   .lang-switch {
+    margin-left: 20px;
     gap: 4px;
   }
 
@@ -290,6 +291,7 @@ section {
   }
 
   .lang-switch {
+    margin-left: auto;
     gap: 6px;
   }
 }
