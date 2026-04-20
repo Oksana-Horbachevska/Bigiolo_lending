@@ -24,6 +24,11 @@
   line-height: 1.25em;
   color: #4a7b63;
 }
+
+.about-content-wrapper {
+  opacity: 1;
+  transform: none;
+}
 .about-text {
   margin-top: 70px;
   margin-bottom: 20px;
@@ -62,20 +67,19 @@
 .about-img-box:active img {
   transform: scale(1.03);
 }
+
 .about-img {
   display: block;
   transition: all 0.5s;
   width: 100%;
 }
 
-.about-content-wrapper,
 .about-img-box {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
 }
 
-.about-content-wrapper.visible,
 .about-img-box.visible {
   opacity: 1;
   transform: translateY(0);

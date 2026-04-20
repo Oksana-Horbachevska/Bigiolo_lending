@@ -9,6 +9,4 @@ const observer = new IntersectionObserver(
   { threshold: 0.2 }
 );
 
-document
-  .querySelectorAll('.about-content-wrapper, .about-img-box')
-  .forEach(el => observer.observe(el));
+document.querySelectorAll('.about-img-box').forEach(el => observer.observe(el));
