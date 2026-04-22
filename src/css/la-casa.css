@@ -41,6 +41,13 @@
   font-size: 16px;
 }
 
+.casa-subtitle {
+  font-family: 'Lora', serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: white;
+}
+
 .la-casa-swiper {
   position: relative;
   width: 100%;
@@ -53,6 +60,11 @@
   max-height: 700px;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.swiper-slide:hover .casa-gallery-img {
+  transform: scale(1.03);
 }
 
 .la-casa-prev,
