@@ -17,19 +17,17 @@ const observer = new IntersectionObserver(
         const id = entry.target.id;
 
         navLinks.forEach(link => {
-          link.classList.toggle(
-            'current',
-            link.getAttribute('href') === `#${id}`
-          );
+          const linkId = link.getAttribute('href').replace('#', '');
+          link.classList.toggle('current', linkId === id);
         });
       }
     });
   },
   {
-    threshold: 0.6,
+    rootMargin: '-88px 0px -70% 0px',
+    threshold: 0,
   }
 );
-
 sections.forEach(section => observer.observe(section));
 
 // -------------------appeared with scroll --------------------------
